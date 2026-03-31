@@ -1,0 +1,51 @@
+EngliTut — ESP32 Wiring Guide
+==============================
+
+COMPONENT 1: INMP441 Microphone
+---------------------------------
+INMP441 Pin   →   ESP32 Pin
+-----------       ---------
+VDD           →   3.3V
+GND           →   GND
+SD  (data)    →   GPIO 32
+SCK (clock)   →   GPIO 14
+WS  (word)    →   GPIO 15
+L/R           →   GND  (selects left channel)
+
+
+COMPONENT 2: MAX98357A Speaker Amplifier
+-----------------------------------------
+MAX98357A Pin →   ESP32 Pin
+-------------     ---------
+VIN           →   5V
+GND           →   GND
+DIN (data)    →   GPIO 22
+BCLK (clock)  →   GPIO 26
+LRC  (word)   →   GPIO 25
+SD MODE       →   leave unconnected (auto-on)
+
+
+COMPONENT 3: Push Button
+--------------------------
+Button Pin    →   ESP32 Pin
+----------        ---------
+Leg 1         →   GPIO 4
+Leg 2         →   GND
+(No resistor needed — we use internal pull-up)
+
+
+POWER
+------
+- Power ESP32 via USB from PC, or 3.7V LiPo battery via VIN pin
+- MAX98357A needs 5V — use USB 5V pin or separate supply
+- INMP441 works on 3.3V
+
+
+HOW IT WORKS
+-------------
+1. Press the button
+2. ESP32 records 10 seconds of audio from the mic
+3. Audio is sent to your PC over WiFi as a WAV file
+4. PC runs: Transcribe → LLM Correct → TTS
+5. PC sends back audio
+6. ESP32 plays the response through the speaker

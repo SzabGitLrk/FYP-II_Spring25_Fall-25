@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SpeakMate — Device with Recording</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bgA:#eaf0ff;
+    --bgB:#dfe8fb;
+    --dev-dark:#0f1720;
+    --dev-mid:#19242f;
+    --glass: rgba(255,255,255,0.06);
+    --neon-blue:#4a9dff;
+    --neon-purple:#c26bff;
+    --neon-green:#28e07a;
+    --neon-orange:#ff9a3b;
+    --accent: #78b7ff;
+    --soft-white: #eef6ff;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(180deg,var(--bgA),var(--bgB));
+  }
+
+  .center {
+    width:100%;
+    max-width:520px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:36px;
+    box-sizing:border-box;
+    z-index:1;
+  }
+
+  .device {
+    width:380px;
+    height:640px;
+    border-radius:30px;
+    background: linear-gradient(180deg,#16202a 0%, #0b1014 100%);
+    padding:22px;
+    box-sizing:border-box;
+    position:relative;
+    transform-style:preserve-3d;
+    transition: transform 200ms cubic-bezier(.2,.9,.25,1), box-shadow 220ms;
+    box-shadow:
+      0 36px 90px rgba(5,12,30,0.45),
+      inset 0 6px 18px rgba(255,255,255,0.02);
+    user-select:none;
+  }
+
+  .device { transform: perspective(1000px) rotateX(10deg) rotateY(-12deg); }
+  .device.tilt-enabled { transition: transform 100ms linear; }
+
+  .top-badge {
+    position:absolute;
+    top:16px;
+    left:18px;
+    padding:8px 14px;
+    background: linear-gradient(180deg,#2b3946,#1f2b36);
+    border-radius:10px;
+    color:var(--soft-white);
+    font-weight:700;
+    transform: translateZ(40px);
+    box-shadow:0 10px 24px rgba(0,0,0,0.45);
+  }
+  .leds {
+    position:absolute;
+    top:18px;
+    right:18px;
+    display:flex;
+    gap:8px;
+    transform: translateZ(40px);
+  }
+  .led { width:12px;height:12px;border-radius:50%; box-shadow: 0 6px 14px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06); }
+  .led.blue { background: var(--neon-blue); }
+  .led.green { background: var(--neon-green); }
+  .led.red { background: var(--neon-orange); }
+
+  .plug {
+    position:absolute;
+    left:-52px;
+    top:190px;
+    width:60px;
+    height:132px;
+    border-radius:12px;
+    background: linear-gradient(180deg,#2a333a,#13181c);
+    box-shadow: 0 22px 46px rgba(0,0,0,0.45);
+    transform: translateZ(20px);
+  }
+
+  .screen {
+    width:100%;
+    height:460px;
+    margin-top:50px;
+    border-radius:18px;
+    background: linear-gradient(180deg,#06121a 0%, #08141c 100%);
+    padding:26px;
+    box-sizing:border-box;
+    box-shadow: inset 0 18px 40px rgba(0,0,0,0.7), 0 14px 30px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.02);
+    transform: translateZ(52px);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .screen h2 {
+    margin:0;
+    color:var(--soft-white);
+    text-align:center;
+    font-weight:800;
+    font-size:20px;
+    letter-spacing:1px;
+    text-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  }
+
+  /* Mode selection view */
+  .view {
+    position:absolute;
+    inset:26px;
+    opacity:1;
+    transition: opacity 300ms, transform 300ms;
+  }
+  .view.hidden {
+    opacity:0;
+    pointer-events:none;
+    transform: scale(0.96);
+  }
+
+  .grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:18px;
+    padding:8px;
+  }
+
+  .tile {
+    height:152px;
+    border-radius:14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:800;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    transition: transform 220ms cubic-bezier(.2,.9,.25,1), box-shadow 220ms;
+    transform-style:preserve-3d;
+    border:1px solid rgba(255,255,255,0.02);
+    will-change:transform;
+  }
+
+  .tile.pulse {
+    animation: tilePulse 3s ease-in-out infinite;
+  }
+  @keyframes tilePulse {
+    0% { transform: translateZ(30px) translateY(0); filter:brightness(1); }
+    50% { transform: translateZ(40px) translateY(-6px); filter:brightness(1.03); }
+    100% { transform: translateZ(30px) translateY(0); filter:brightness(1); }
+  }
+
+  .tile:hover { transform: translateZ(60px) scale(1.03); box-shadow: 0 34px 64px rgba(0,0,0,0.6); }
+
+  .tile .letter { font-size:40px; line-height:1; text-shadow: 0 6px 14px rgba(0,0,0,0.5); }
+  .tile .desc { font-size:12px; margin-top:8px; font-weight:700; text-align:center; letter-spacing:0.4px; }
+
+  .blue { background: linear-gradient(180deg,#4a8bff,#2b6de6); box-shadow: 0 18px 52px rgba(74,157,255,0.16), 0 0 22px rgba(74,157,255,0.14); }
+  .purple { background: linear-gradient(180deg,#cf7bff,#9a45e8); box-shadow: 0 18px 52px rgba(194,107,255,0.16), 0 0 22px rgba(194,107,255,0.14); }
+  .green  { background: linear-gradient(180deg,#39e075,#1ea853); box-shadow: 0 18px 52px rgba(47,224,122,0.18), 0 0 22px rgba(47,224,122,0.12); }
+  .orange { background: linear-gradient(180deg,#ffb14c,#ff7a0d); box-shadow: 0 18px 52px rgba(255,154,59,0.16), 0 0 22px rgba(255,154,59,0.12); }
+
+  .mic {
+    margin-top:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    transform: translateZ(40px);
+  }
+  .mic .pill {
+    background: linear-gradient(180deg,#0f1720,#081015);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:28px;
+    font-weight:800;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .mic .dot {
+    width:12px; height:12px; border-radius:50%;
+    background: linear-gradient(180deg,#d33,#900);
+    box-shadow: 0 6px 16px rgba(211,80,80,0.36), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* Recording view */
+  .recording-view {
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+
+  .mode-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+
+  .back-btn {
+    background: linear-gradient(180deg,#2b3946,#1f2b36);
+    color:var(--soft-white);
+    border:none;
+    padding:8px 16px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    font-size:14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    transition: transform 150ms;
+  }
+  .back-btn:hover { transform: scale(1.05); }
+  .back-btn:active { transform: scale(0.98); }
+
+  .mode-title {
+    font-size:16px;
+    color:var(--accent);
+    font-weight:800;
+  }
+
+  .transcript-panels {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    overflow:hidden;
+  }
+
+  .panel {
+    flex:1;
+    background: linear-gradient(180deg,#0a1218,#060d12);
+    border-radius:12px;
+    padding:14px;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: inset 0 8px 20px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  .panel-header {
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:10px;
+    color:var(--soft-white);
+    text-transform:uppercase;
+    letter-spacing:1px;
+  }
+
+  .panel-header.raw { color:#4a9dff; }
+  .panel-header.corrected { color:#28e07a; }
+
+  .panel-content {
+    flex:1;
+    overflow-y:auto;
+    color:#b8c9db;
+    font-size:14px;
+    line-height:1.6;
+    padding:6px;
+  }
+
+  .panel-content::-webkit-scrollbar { width:6px; }
+  .panel-content::-webkit-scrollbar-track { background:rgba(0,0,0,0.2); border-radius:3px; }
+  .panel-content::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:3px; }
+
+  .placeholder {
+    color:#4a5a6a;
+    font-style:italic;
+    font-size:13px;
+  }
+
+  .controls {
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+
+  .btn {
+    padding:10px 20px;
+    border-radius:20px;
+    border:none;
+    font-weight:800;
+    cursor:pointer;
+    font-size:13px;
+    transition: transform 150ms, box-shadow 150ms;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.4); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-record {
+    background: linear-gradient(180deg,#ff4444,#cc0000);
+    color:#fff;
+  }
+  .btn-record.recording {
+    background: linear-gradient(180deg,#4a9dff,#2b6de6);
+    animation: recordPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes recordPulse {
+    0%, 100% { box-shadow: 0 8px 18px rgba(74,157,255,0.3); }
+    50% { box-shadow: 0 8px 28px rgba(74,157,255,0.6), 0 0 20px rgba(74,157,255,0.4); }
+  }
+
+  .btn-stop {
+    background: linear-gradient(180deg,#666,#444);
+    color:#fff;
+  }
+
+  .btn-play {
+    background: linear-gradient(180deg,#28e07a,#1ea853);
+    color:#fff;
+  }
+
+  .ripple {
+    position:absolute;
+    border-radius:50%;
+    transform: scale(0);
+    background: rgba(255,255,255,0.14);
+    pointer-events:none;
+    animation: rippleA 700ms ease-out;
+  }
+  @keyframes rippleA{ to { transform: scale(6); opacity:0; } }
+
+  .tile::before{
+    content:"";
+    position:absolute;
+    left:-60%;
+    top:-10%;
+    width:200%;
+    height:120%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.06) 28%, rgba(255,255,255,0.0) 60%);
+    transform: rotate(12deg);
+    pointer-events:none;
+    filter: blur(8px);
+    mix-blend-mode:overlay;
+    transition: transform 700ms linear, left 700ms;
+  }
+  .tile:hover::before { left: 140%; }
+
+  @media (max-width:460px){
+    .device { width:92vw; height:640px; }
+    .grid { gap:12px; }
+    .tile { height:120px; }
+  }
+
+  .tile:focus, .pill:focus { outline: 3px solid rgba(120,180,255,0.14); outline-offset:8px; }
+
+  .status-indicator {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    color:#4a9dff;
+    margin-left:10px;
+  }
+
+  .status-dot {
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#4a9dff;
+    animation: statusBlink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes statusBlink {
+    0%, 100% { opacity:1; }
+    50% { opacity:0.3; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="center">
+    <div id="device" class="device tilt-enabled" aria-label="SpeakMate device">
+      <div class="top-badge">ESP32-AI</div>
+      <div class="leds"><div class="led blue"></div><div class="led green"></div><div class="led red"></div></div>
+      <div class="plug" aria-hidden="true"></div>
+
+      <div class="screen" id="screen">
+        <!-- Mode Selection View -->
+        <div id="modeView" class="view">
+          <h2>⚡ SELECT MODE ⚡</h2>
+
+          <div class="grid" id="grid">
+            <div class="tile blue pulse" role="button" tabindex="0" data-mode="practice" data-name="Daily Practice">
+              <div class="letter">P</div>
+              <div class="desc">Daily<br>English Practice</div>
+            </div>
+
+            <div class="tile purple pulse" role="button" tabindex="0" data-mode="exam" data-name="Exam Simulation">
+              <div class="letter">I</div>
+              <div class="desc">Exam<br>Simulation</div>
+            </div>
+
+            <div class="tile green pulse" role="button" tabindex="0" data-mode="scenarios" data-name="Real-life Scenarios">
+              <div class="letter">RP</div>
+              <div class="desc">Real-life<br>Scenarios</div>
+            </div>
+
+            <div class="tile orange pulse" role="button" tabindex="0" data-mode="translate" data-name="Urdu to English">
+              <div class="letter">T</div>
+              <div class="desc">Urdu to<br>English</div>
+            </div>
+          </div>
+
+          <div class="mic">
+            <div class="pill"><span class="dot"></span> MICROPHONE</div>
+          </div>
+        </div>
+
+        <!-- Recording View -->
+        <div id="recordingView" class="view hidden">
+          <div class="recording-view">
+            <div class="mode-header">
+              <button class="back-btn" id="backBtn">← BACK</button>
+              <div class="mode-title" id="modeTitle">Daily Practice</div>
+            </div>
+
+            <div class="transcript-panels">
+              <div class="panel">
+                <div class="panel-header raw">
+                  📝 Raw Transcript
+                  <span id="recordingStatus" class="status-indicator" style="display:none;">
+                    <span class="status-dot"></span>
+                    Recording...
+                  </span>
+                </div>
+                <div class="panel-content" id="rawTranscript">
+                  <div class="placeholder">Click "Start Recording" to begin...</div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-header corrected">✨ Corrected Transcript</div>
+                <div class="panel-content" id="correctedTranscript">
+                  <div class="placeholder">AI corrections will appear here...</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button class="btn btn-record" id="recordBtn">🎤 Start Recording</button>
+              <button class="btn btn-stop" id="stopBtn" style="display:none;">⏹ Stop</button>
+              <button class="btn btn-play" id="playBtn" style="display:none;">🔊 Play Correction</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ============ 3D tilt ============ */
+(function(){
+  const device = document.getElementById('device');
+  const damp = 0.12;
+  let tx = 10, ty = -12;
+  let rx = tx, ry = ty;
+  let lastMouse = {x: window.innerWidth/2, y: window.innerHeight/2};
+
+  function onMove(e){
+    const x = e.clientX || (e.touches && e.touches[0].clientX) || lastMouse.x;
+    const y = e.clientY || (e.touches && e.touches[0].clientY) || lastMouse.y;
+    lastMouse.x = x; lastMouse.y = y;
+
+    const rect = device.getBoundingClientRect();
+    const cx = rect.left + rect.width/2;
+    const cy = rect.top + rect.height/2;
+    const nx = (x - cx) / (rect.width/2);
+    const ny = (y - cy) / (rect.height/2);
+
+    tx = 10 + (-ny * 12);
+    ty = -12 + (nx * 12);
+  }
+
+  function animate(){
+    rx += (tx - rx) * damp;
+    ry += (ty - ry) * damp;
+    device.style.transform = `perspective(1000px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  window.addEventListener('pointermove', onMove, {passive:true});
+  window.addEventListener('touchmove', onMove, {passive:true});
+  window.addEventListener('pointerleave', ()=> { tx = 10; ty = -12; });
+})();
+
+/* ============ View Management & Recording ============ */
+(function(){
+  const modeView = document.getElementById('modeView');
+  const recordingView = document.getElementById('recordingView');
+  const modeTitle = document.getElementById('modeTitle');
+  const backBtn = document.getElementById('backBtn');
+  const tiles = document.querySelectorAll('.tile');
+  
+  const recordBtn = document.getElementById('recordBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const playBtn = document.getElementById('playBtn');
+  const rawTranscript = document.getElementById('rawTranscript');
+  const correctedTranscript = document.getElementById('correctedTranscript');
+  const recordingStatus = document.getElementById('recordingStatus');
+
+  let recognition = null;
+  let isRecording = false;
+  let currentTranscript = '';
+  let selectedMode = '';
+
+  // Initialize Speech Recognition
+  function initSpeechRecognition(){
+    if(!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)){
+      alert('Speech recognition is not supported in this browser. Please use Chrome or Edge.');
+      return null;
+    }
+    
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recog = new SpeechRecognition();
+    recog.continuous = true;
+    recog.interimResults = true;
+    recog.lang = 'en-US';
+
+    recog.onresult = (event) => {
+      let interim = '';
+      let final = '';
+      
+      for(let i = event.resultIndex; i < event.results.length; i++){
+        const transcript = event.results[i][0].transcript;
+        if(event.results[i].isFinal){
+          final += transcript + ' ';
+        } else {
+          interim += transcript;
+        }
+      }
+      
+      if(final){
+        currentTranscript += final;
+      }
+      
+      const displayText = currentTranscript + (interim ? '<span style="color:#6a9dff;">' + interim + '</span>' : '');
+      rawTranscript.innerHTML = displayText || '<div class="placeholder">Listening...</div>';
+      
+      // Auto-scroll
+      rawTranscript.scrollTop = rawTranscript.scrollHeight;
+
+      // Simulate AI correction (replace with actual AI call later)
+      if(final){
+        simulateAICorrection(currentTranscript);
+      }
+    };
+
+    recog.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+      if(event.error === 'no-speech'){
+        rawTranscript.innerHTML = currentTranscript + '<div class="placeholder" style="color:#ff9a3b;">No speech detected. Keep speaking...</div>';
+      }
+    };
+
+    recog.onend = () => {
+      if(isRecording){
+        recog.start(); // Restart if still recording
+      }
+    };
+
+    return recog;
+  }
+
+  // Simulate AI correction (replace with actual API call)
+  async function simulateAICorrection(text){
+    // send to backend for correction + TTS
+    correctedTranscript.innerHTML = '<div class="placeholder">Correcting...</div>';
+    playBtn.style.display = 'none';
+    try {
+      const resp = await fetch('http://127.0.0.1:5000/api/correct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: text, mode: selectedMode || 'practice' })
+      });
+
+      if(!resp.ok){
+        const err = await resp.json().catch(()=>({message:'Unknown error'}));
+        correctedTranscript.innerHTML = '<div class="placeholder" style="color:#ff9a3b;">Error: '+ (err.message || resp.statusText) +'</div>';
+        return;
+      }
+
+      const data = await resp.json();
+      const corrected = data.corrected_text || '';
+      const advice = data.advice || '';
+
+      correctedTranscript.innerHTML = corrected ? corrected.replace(/\n/g, '<br>') : '<div class="placeholder">No correction returned.</div>';
+      correctedTranscript.scrollTop = correctedTranscript.scrollHeight;
+
+      if (data.audio_url) {
+        playBtn.dataset.audio = data.audio_url; // store
+        playBtn.style.display = 'inline-block';
+      } else {
+        playBtn.style.display = 'none';
+      }
+
+      // Optionally show small advice area
+      if(advice){
+        const adv = document.createElement('div');
+        adv.style.marginTop = '8px';
+        adv.style.fontSize = '12px';
+        adv.style.color = '#9fdba9';
+        adv.textContent = 'Tip: ' + advice;
+        // remove previous tip
+        const prev = correctedTranscript.querySelector('.advice-tip');
+        if(prev) prev.remove();
+        adv.className = 'advice-tip';
+        correctedTranscript.appendChild(adv);
+      }
+
+    } catch (err) {
+      console.error('correction error', err);
+      correctedTranscript.innerHTML = '<div class="placeholder" style="color:#ff9a3b;">Network error: '+err.message+'</div>';
+    }
+  }
+
+
+  // Mode selection
+  tiles.forEach(tile => {
+    tile.addEventListener('click', function(){
+      selectedMode = this.dataset.mode;
+      modeTitle.textContent = this.dataset.name;
+      
+      // Switch views
+      modeView.classList.add('hidden');
+      setTimeout(() => {
+        recordingView.classList.remove('hidden');
+      }, 150);
+      
+      // Reset transcript
+      currentTranscript = '';
+      rawTranscript.innerHTML = '<div class="placeholder">Click "Start Recording" to begin...</div>';
+      correctedTranscript.innerHTML = '<div class="placeholder">AI corrections will appear here...</div>';
+      playBtn.style.display = 'none';
+    });
+  });
+
+  // Back button
+  backBtn.addEventListener('click', () => {
+    if(isRecording){
+      stopRecording();
+    }
+    recordingView.classList.add('hidden');
+    setTimeout(() => {
+      modeView.classList.remove('hidden');
+    }, 150);
+  });
+
+  // Start recording
+  recordBtn.addEventListener('click', () => {
+    if(!recognition){
+      recognition = initSpeechRecognition();
+      if(!recognition) return;
+    }
+
+    isRecording = true;
+    currentTranscript = '';
+    rawTranscript.innerHTML = '<div class="placeholder">Listening...</div>';
+    
+    try {
+      recognition.start();
+      recordBtn.classList.add('recording');
+      recordBtn.textContent = '🎤 Recording...';
+      recordingStatus.style.display = 'inline-flex';
+      stopBtn.style.display = 'inline-block';
+      recordBtn.style.display = 'none';
+    } catch(e) {
+      console.error('Error starting recognition:', e);
+    }
+  });
+
+  // Stop recording
+  stopBtn.addEventListener('click', stopRecording);
+
+  function stopRecording(){
+    if(recognition && isRecording){
+      isRecording = false;
+      recognition.stop();
+      recordBtn.classList.remove('recording');
+      recordBtn.textContent = '🎤 Start Recording';
+      recordingStatus.style.display = 'none';
+      stopBtn.style.display = 'none';
+      recordBtn.style.display = 'inline-block';
+      
+      if(!currentTranscript){
+        rawTranscript.innerHTML = '<div class="placeholder">No speech detected.</div>';
+      }
+    }
+  }
+
+  // Play correction (Text-to-Speech)
+   playBtn.addEventListener('click', () => {
+    const audioUrl = playBtn.dataset.audio;
+    const text = correctedTranscript.textContent;
+    if(audioUrl){
+      // play server-generated audio
+      playBtn.textContent = '🔊 Playing...';
+      playBtn.style.pointerEvents = 'none';
+      const a = new Audio(audioUrl);
+      a.onended = () => {
+        playBtn.textContent = '🔊 Play Correction';
+        playBtn.style.pointerEvents = 'auto';
+      };
+      a.onerror = () => {
+        playBtn.textContent = '🔊 Play Correction';
+        playBtn.style.pointerEvents = 'auto';
+        alert('Unable to play audio from server.');
+      };
+      a.play();
+      return;
+    }
+
+    // Fallback: use browser TTS (existing behavior)
+    if('speechSynthesis' in window){
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      playBtn.textContent = '🔊 Playing...';
+      playBtn.style.pointerEvents = 'none';
+      utterance.onend = () => {
+        playBtn.textContent = '🔊 Play Correction';
+        playBtn.style.pointerEvents = 'auto';
+      };
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert('Text-to-speech is not supported in this browser.');
+    }
+  });
+
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Audio Input / Processing
+sounddevice
+numpy
+scipy
+noisereduce
+soundfile
+pydub
+
+# Speech to Text (Groq Whisper API — no local model needed)
+groq
+
+# Text to Speech
+pyttsx3
+gTTS
+pygame
+playsound==1.2.2
+
+# Web server (for ESP32 communication)
+flask
+flask-cors
+
+# Environment
+python-dotenv
