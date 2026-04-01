@@ -1,0 +1,5 @@
+*.pt
+train15/weights/
+__pycache__/
+.vscode/
+*.ipynb_checkpoints
