@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | Healthcare Assistant</title>
+
+  <!-- Load CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+
+  <div class="signup-container">
+    <div class="form-box">
+      <h1>Create Account</h1>
+      <p class="subtitle">Join us and manage your healthcare easily</p>
+
+      <form id="signupForm" class="auth-form">
+        <div class="input-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required>
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+
+        <!-- Status message -->
+        <div id="signupStatus"></div>
+      </form>
+
+      <p class="redirect">Already have an account?
+        <a href="{{ url_for('login') }}">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- JS File -->
+  <script type="module" src="{{ url_for('static', filename='js/signup.js') }}"></script>
+
+</body>
+</html>

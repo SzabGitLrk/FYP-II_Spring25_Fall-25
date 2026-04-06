@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History | Healthcare Assistant</title>
+
+  <!-- Correct Flask CSS Linking -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>AI Healthcare Assistant</h1>
+  </header>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('dashboard') }}">🏠 Home</a></li>
+          <li><a href="{{ url_for('chatbot_page') }}">🤖 Chatbot</a></li>
+          <li><a href="{{ url_for('upload_report') }}">📤 Upload Report</a></li>
+          <li><a href="{{ url_for('reminders') }}">⏰ Reminders</a></li>
+
+          <!-- Active Page -->
+          <li class="active"><a href="{{ url_for('history') }}">📜 History</a></li>
+
+          <li><a href="{{ url_for('login') }}">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <section class="page-header">
+        <h2>📜 History</h2>
+        <p>Your recent interactions & activity logs.</p>
+      </section>
+
+      <!-- TABLE SECTION
+      <section class="history-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Activity</th>
+              <th>Details</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody
+            <tr>
+              <td>2025-10-01</td>
+              <td>Report Upload</td>
+              <td>Blood Test Report.pdf</td>
+              <td><span class="status success">Analyzed</span></td>
+            </tr>
+
+            <tr>
+              <td>2025-09-28</td>
+              <td>Medication Suggestion</td>
+              <td>Paracetamol 500mg (2x daily)</td>
+              <td><span class="status pending">Suggested</span></td>
+            </tr>
+
+            <tr>
+              <td>2025-09-25</td>
+              <td>Reminder Set</td>
+              <td>Vitamin D – 9:00 AM Daily</td>
+              <td><span class="status success">Active</span></td>
+            </tr>
+
+            <tr>
+              <td>2025-09-20</td>
+              <td>Chatbot</td>
+              <td>“What are the side effects of Ibuprofen?”</td>
+              <td><span class="status info">Answered</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+  </div> -->
+
+  <footer class="footer">
+    <p>&copy; 2025 AI Healthcare Assistant</p>
+  </footer>
+
+  <!-- Correct Flask JS Linking -->
+  <!-- <script src="{{ url_for('static', filename='js/history.js') }}"></script> -->
+  <script type="module" src="{{ url_for('static', filename='js/history.js') }}"></script>
+</body>
+</html>
