@@ -67,7 +67,7 @@ The AI Healthcare Assistant is a web-based application that provides intelligent
 ### 1. Clone Repository
 ```bash
 git clone <repository-url>
-cd your-repo-name
+cd AI_healthcare_assistant
 ```
 2. Create Virtual Enviroment
 ```
