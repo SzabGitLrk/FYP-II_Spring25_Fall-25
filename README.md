@@ -9,7 +9,6 @@ The AI Healthcare Assistant is a web-based application that provides intelligent
 * 💊 Medication and symptom matching
 * 🔐 Firebase Authentication system
 
----
 
 ## 🚀 Features
 
@@ -40,7 +39,7 @@ The AI Healthcare Assistant is a web-based application that provides intelligent
 * Set medicine reminders
 * Track schedules
 
----
+
 
 ## 🛠️ Technologies Used
 
@@ -60,14 +59,14 @@ The AI Healthcare Assistant is a web-based application that provides intelligent
 * OpenCV & Tesseract (OCR)
 * Flask-CORS
 
----
+
 
 ## ⚙️ Installation & Setup
 
 ### 1. Clone Repository
 ```bash
 git clone <repository-url>
-cd your-repo-name
+cd your AiHealthassistant
 ```
 2. Create a virtual Environment 
 ```
@@ -95,12 +94,18 @@ python app.py
 Open browser: http://localhost:5000
 
 📊 Dataset Used
+
 •	Medical reasoning dataset from Hugging Face
+
 •	Custom medication dataset (CSV)
-________________________________________
+
 🎯 Future Improvements
+
 •	Mobile app integration
+
 •	Doctor appointment booking
+
 •	Advanced AI diagnosis
+
 •	Voice-based interaction
 
