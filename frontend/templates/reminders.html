@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reminders | Healthcare Assistant</title>
+
+  <!-- Flask CSS Link -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/reminders.css') }}">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>Healthcare Assistant</h2>
+    <ul>
+      <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+      <li><a href="{{ url_for('chatbot_page') }}">Chatbot</a></li>
+      <li><a href="{{ url_for('upload_report') }}">Upload Report</a></li>
+      <li><a href="{{ url_for('reminders') }}" class="active">Reminders</a></li>
+      <li><a href="{{ url_for('history') }}">History</a></li>
+      <li><a href="{{ url_for('login') }}">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Reminder Section -->
+  <section class="reminder-container">
+    <h1>Medicine Reminders</h1>
+    <p>Set a reminder to take your medication on time.</p>
+
+    <form id="reminderForm">
+      <input type="text" id="medicine" placeholder="Medicine Name" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <button type="submit" class="btn">Add Reminder</button>
+    </form>
+
+    <h2>Your Reminders</h2>
+    <ul id="reminderList"></ul>
+  </section>
+
+  <!-- Flask JS Link -->
+  <!-- <script src="{{ url_for('static', filename='js/reminders.js') }}"></script> -->
+  <script type="module" src="{{ url_for('static', filename='js/reminders.js') }}"></script>
+
+</body>
+</html>

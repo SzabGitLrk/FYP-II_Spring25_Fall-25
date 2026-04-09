@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot | Healthcare Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+
+</head>
+<body>
+  <nav class="navbar">
+    <h2>Healthcare Assistant</h2>
+    <ul>
+      <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+      <li><a href="{{ url_for('chatbot_page') }}" class="active">Chatbot</a></li>
+      <li><a href="{{ url_for('upload_report') }}">Upload Report</a></li>
+      <li><a href="{{ url_for('reminders') }}">Reminders</a></li>
+      <li><a href="{{ url_for('history') }}">History</a></li>
+      <li><a href="{{ url_for('login') }}">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <h3> Chat History</h3>
+      <ul id="historyList"></ul>
+      <button id="clearHistory" class="clear-btn">Clear History</button>
+    </aside>
+
+    <section class="chat-container">
+      <div id="chatbox" class="chatbox">
+        <div class="bot-message">
+           Hello! I am your Healthcare Assistant. How can I help you today?
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-input">
+        <label for="fileUpload" class="attach-icon" title="Attach Report">📎</label>
+        <input type="file" id="fileUpload" accept=".pdf,.jpg,.png,.jpeg" style="display:none" />
+        <input type="text" id="userInput" placeholder="Type your message..." required />
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script> -->
+  <script type="module" src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>

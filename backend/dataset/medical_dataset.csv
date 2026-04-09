@@ -1,0 +1,501 @@
+id,disease_category,condition,symptom_keywords,recommended_medicine,dosage,duration,precautions,notes
+1,General,Weakness,"tiredness, fatigue",Iron Supplements,5 ml syrup twice daily,10 days,Stay hydrated,Monitor symptoms regularly
+2,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,5 ml syrup twice daily,10 days,Take with water,Monitor blood sugar levels
+3,Cardiac,Hypertension,high blood pressure,Losartan,1 capsule daily,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+4,Musculoskeletal,Back Pain,lower back pain,Ibuprofen,5 ml syrup twice daily,10 days,Take after food,Check blood pressure regularly
+5,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,As prescribed,Avoid alcohol,Avoid spicy and oily food
+6,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet after meal,Continuous,Take with water,Can be taken with meals
+7,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet after meal,5 days,Avoid alcohol,Check blood pressure regularly
+8,Endocrine,PCOS,"irregular periods, acne",Metformin,5 ml syrup twice daily,As prescribed,Avoid alcohol,Get adequate rest
+9,Endocrine,PCOS,"irregular periods, acne",Clomiphene,1 tablet twice daily,5 days,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+10,Neurological,Insomnia,lack of sleep,Zolpidem,5 ml syrup twice daily,10 days,Store in cool dry place,Avoid spicy and oily food
+11,Infection,Viral Infection,"fever, sore throat",Paracetamol,1 capsule daily,Continuous,Consult doctor if symptoms persist,Monitor symptoms regularly
+12,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet every 8 hours,Continuous,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+13,Neurological,Insomnia,lack of sleep,Zolpidem,5 ml syrup twice daily,10 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+14,Skin,Fungal Infection,"itching, rashes",Clotrimazole,1 capsule daily,5 days,Do not exceed recommended dose,Check blood pressure regularly
+15,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 capsule daily,Continuous,Avoid alcohol,Check blood pressure regularly
+16,Endocrine,Diabetes,high blood sugar,Glimepiride,1 tablet twice daily,As prescribed,Avoid alcohol,Consult doctor if no improvement in 3 days
+17,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+18,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 capsule daily,5 days,Do not exceed recommended dose,Get adequate rest
+19,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,Continuous,Take after food,Get adequate rest
+20,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet every 8 hours,7 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+21,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,5 ml syrup twice daily,7 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+22,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 tablet every 8 hours,Continuous,Stay hydrated,Avoid spicy and oily food
+23,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 capsule daily,5 days,Avoid alcohol,Can be taken with meals
+24,Digestive,Ulcer,"stomach pain, heartburn",Ranitidine,1 tablet twice daily,Continuous,Store in cool dry place,Check blood pressure regularly
+25,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 capsule daily,10 days,Take after food,Can be taken with meals
+26,Endocrine,Diabetes,high blood sugar,Metformin,5 ml syrup twice daily,Continuous,Avoid driving after taking medicine,Can be taken with meals
+27,Musculoskeletal,Gout,"joint pain, uric acid",Colchicine,1 capsule daily,10 days,Avoid alcohol,Monitor symptoms regularly
+28,Cardiac,Angina,"chest pain, short breath",Aspirin,1 capsule daily,10 days,Avoid driving after taking medicine,Take full course even if you feel better
+29,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet twice daily,As prescribed,Avoid driving after taking medicine,Avoid spicy and oily food
+30,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,5 ml syrup twice daily,10 days,Avoid driving after taking medicine,Get adequate rest
+31,Digestive,Constipation,"hard stool, bloating",Bisacodyl,1 tablet after meal,5 days,Take with water,Check blood pressure regularly
+32,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet after meal,As prescribed,Avoid alcohol,Consult doctor if no improvement in 3 days
+33,Skin,Psoriasis,scaly patches,Coal Tar,1 capsule daily,Continuous,Consult doctor if symptoms persist,Avoid spicy and oily food
+34,Neurological,Migraine,"headache, nausea",Sumatriptan,5 ml syrup twice daily,5 days,Take with water,Get adequate rest
+35,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet twice daily,7 days,Do not exceed recommended dose,Avoid spicy and oily food
+36,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 tablet every 8 hours,7 days,Avoid alcohol,Can be taken with meals
+37,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet every 8 hours,7 days,Avoid alcohol,Avoid spicy and oily food
+38,General,Pain,"body pain, headache",Paracetamol,1 tablet after meal,7 days,Take after food,Get adequate rest
+39,General,Pain,"body pain, headache",Diclofenac,1 tablet after meal,5 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+40,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet every 8 hours,As prescribed,Avoid alcohol,Take full course even if you feel better
+41,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 tablet after meal,7 days,Do not exceed recommended dose,Avoid spicy and oily food
+42,Musculoskeletal,Back Pain,lower back pain,Paracetamol,5 ml syrup twice daily,As prescribed,Consult doctor if symptoms persist,Avoid spicy and oily food
+43,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,1 capsule daily,7 days,Take with water,Monitor symptoms regularly
+44,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet every 8 hours,As prescribed,Do not exceed recommended dose,Get adequate rest
+45,General,Fever,"high temperature, chills",Paracetamol,1 capsule daily,5 days,Avoid alcohol,Take full course even if you feel better
+46,General,Pain,"body pain, headache",Paracetamol,1 tablet after meal,As prescribed,Consult doctor if symptoms persist,Check blood pressure regularly
+47,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,1 capsule daily,Continuous,Avoid alcohol,Monitor blood sugar levels
+48,Endocrine,Diabetes,high blood sugar,Glimepiride,1 tablet twice daily,Continuous,Avoid alcohol,Take full course even if you feel better
+49,Skin,Acne,"pimples, oily skin",Clindamycin,1 tablet every 8 hours,Continuous,Avoid alcohol,Avoid spicy and oily food
+50,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet twice daily,As prescribed,Avoid alcohol,Monitor blood sugar levels
+51,Skin,Psoriasis,scaly patches,Coal Tar,1 tablet every 8 hours,5 days,Consult doctor if symptoms persist,Get adequate rest
+52,Infection,Urinary Tract Infection,burning urination,Cefixime,1 capsule daily,10 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+53,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,5 ml syrup twice daily,Continuous,Avoid alcohol,Get adequate rest
+54,Neurological,Insomnia,lack of sleep,Zolpidem,1 tablet every 8 hours,10 days,Avoid driving after taking medicine,Monitor symptoms regularly
+55,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet after meal,5 days,Take with water,Monitor symptoms regularly
+56,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 tablet every 8 hours,Continuous,Stay hydrated,Get adequate rest
+57,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet twice daily,5 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+58,Neurological,Epilepsy,"seizure, convulsion",Valproate,1 tablet twice daily,Continuous,Store in cool dry place,Take full course even if you feel better
+59,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet after meal,5 days,Take after food,Avoid spicy and oily food
+60,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet twice daily,7 days,Stay hydrated,Avoid spicy and oily food
+61,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 capsule daily,7 days,Store in cool dry place,Get adequate rest
+62,Endocrine,Obesity,"overweight, high BMI",Phentermine,5 ml syrup twice daily,10 days,Avoid alcohol,Avoid spicy and oily food
+63,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 capsule daily,As prescribed,Do not exceed recommended dose,Avoid spicy and oily food
+64,Neurological,Migraine,"headache, nausea",Ibuprofen,5 ml syrup twice daily,Continuous,Avoid alcohol,Consult doctor if no improvement in 3 days
+65,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,1 capsule daily,5 days,Avoid driving after taking medicine,Monitor blood sugar levels
+66,Cardiac,Angina,"chest pain, short breath",Aspirin,1 capsule daily,As prescribed,Store in cool dry place,Check blood pressure regularly
+67,Neurological,Anxiety,"restlessness, tension",Diazepam,1 capsule daily,10 days,Avoid driving after taking medicine,Get adequate rest
+68,Endocrine,Obesity,"overweight, high BMI",Orlistat,1 capsule daily,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+69,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 capsule daily,10 days,Take after food,Consult doctor if no improvement in 3 days
+70,Skin,Acne,"pimples, oily skin",Clindamycin,1 tablet after meal,7 days,Avoid alcohol,Monitor blood sugar levels
+71,Endocrine,PCOS,"irregular periods, acne",Metformin,1 capsule daily,5 days,Stay hydrated,Monitor symptoms regularly
+72,Cardiac,Hypertension,high blood pressure,Losartan,5 ml syrup twice daily,10 days,Stay hydrated,Avoid spicy and oily food
+73,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet after meal,Continuous,Store in cool dry place,Avoid spicy and oily food
+74,Neurological,Migraine,"headache, nausea",Ibuprofen,1 capsule daily,10 days,Do not exceed recommended dose,Avoid spicy and oily food
+75,Endocrine,Diabetes,high blood sugar,Metformin,1 tablet twice daily,As prescribed,Avoid alcohol,Can be taken with meals
+76,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet after meal,Continuous,Avoid driving after taking medicine,Monitor symptoms regularly
+77,Digestive,Ulcer,"stomach pain, heartburn",Ranitidine,1 tablet twice daily,Continuous,Store in cool dry place,Avoid spicy and oily food
+78,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet twice daily,As prescribed,Store in cool dry place,Consult doctor if no improvement in 3 days
+79,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 tablet after meal,10 days,Avoid driving after taking medicine,Consult doctor if no improvement in 3 days
+80,Infection,Bacterial Infection,"fever, pain",Amoxicillin,5 ml syrup twice daily,Continuous,Consult doctor if symptoms persist,Monitor symptoms regularly
+81,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet every 8 hours,Continuous,Take with water,Get adequate rest
+82,General,Fever,"high temperature, chills",Ibuprofen,1 tablet twice daily,10 days,Do not exceed recommended dose,Get adequate rest
+83,Digestive,Diarrhea,"loose motion, dehydration",ORS,1 tablet every 8 hours,As prescribed,Avoid driving after taking medicine,Get adequate rest
+84,Skin,Acne,"pimples, oily skin",Clindamycin,1 tablet after meal,5 days,Take after food,Consult doctor if no improvement in 3 days
+85,Endocrine,PCOS,"irregular periods, acne",Metformin,1 tablet twice daily,10 days,Store in cool dry place,Monitor symptoms regularly
+86,Endocrine,PCOS,"irregular periods, acne",Clomiphene,1 tablet every 8 hours,As prescribed,Take after food,Avoid spicy and oily food
+87,Neurological,Anxiety,"restlessness, tension",Alprazolam,1 tablet every 8 hours,Continuous,Store in cool dry place,Monitor blood sugar levels
+88,Skin,Acne,"pimples, oily skin",Adapalene,1 capsule daily,5 days,Take with water,Monitor blood sugar levels
+89,Endocrine,PCOS,"irregular periods, acne",Clomiphene,1 tablet every 8 hours,7 days,Avoid alcohol,Take full course even if you feel better
+90,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet after meal,10 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+91,Cardiac,Angina,"chest pain, short breath",Aspirin,1 capsule daily,10 days,Consult doctor if symptoms persist,Take full course even if you feel better
+92,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,5 ml syrup twice daily,10 days,Avoid driving after taking medicine,Check blood pressure regularly
+93,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet after meal,10 days,Consult doctor if symptoms persist,Get adequate rest
+94,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,1 tablet after meal,Continuous,Take with water,Can be taken with meals
+95,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,5 ml syrup twice daily,As prescribed,Do not exceed recommended dose,Monitor blood sugar levels
+96,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,5 ml syrup twice daily,Continuous,Consult doctor if symptoms persist,Monitor symptoms regularly
+97,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 tablet after meal,10 days,Take after food,Take full course even if you feel better
+98,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,1 tablet every 8 hours,Continuous,Do not exceed recommended dose,Get adequate rest
+99,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet twice daily,10 days,Consult doctor if symptoms persist,Can be taken with meals
+100,Digestive,Ulcer,"stomach pain, heartburn",Ranitidine,1 capsule daily,As prescribed,Take after food,Monitor blood sugar levels
+101,Endocrine,Thyroid Disorder,"fatigue, weight change",Carbimazole,1 tablet after meal,7 days,Consult doctor if symptoms persist,Check blood pressure regularly
+102,General,Fever,"high temperature, chills",Paracetamol,1 capsule daily,10 days,Do not exceed recommended dose,Monitor symptoms regularly
+103,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet every 8 hours,7 days,Take with water,Can be taken with meals
+104,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet every 8 hours,7 days,Take after food,Take full course even if you feel better
+105,Neurological,Insomnia,lack of sleep,Zolpidem,5 ml syrup twice daily,Continuous,Consult doctor if symptoms persist,Monitor symptoms regularly
+106,General,Weakness,"tiredness, fatigue",Iron Supplements,1 tablet every 8 hours,5 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+107,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,5 ml syrup twice daily,As prescribed,Stay hydrated,Consult doctor if no improvement in 3 days
+108,Neurological,Anxiety,"restlessness, tension",Diazepam,1 capsule daily,Continuous,Consult doctor if symptoms persist,Get adequate rest
+109,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet twice daily,5 days,Stay hydrated,Monitor blood sugar levels
+110,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 tablet twice daily,10 days,Take with water,Take full course even if you feel better
+111,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,1 capsule daily,10 days,Do not exceed recommended dose,Can be taken with meals
+112,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,1 tablet every 8 hours,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+113,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet twice daily,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+114,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 tablet every 8 hours,7 days,Avoid driving after taking medicine,Monitor symptoms regularly
+115,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet every 8 hours,As prescribed,Do not exceed recommended dose,Can be taken with meals
+116,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 capsule daily,5 days,Avoid driving after taking medicine,Monitor symptoms regularly
+117,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet twice daily,10 days,Store in cool dry place,Take full course even if you feel better
+118,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet after meal,Continuous,Take after food,Check blood pressure regularly
+119,Digestive,Constipation,"hard stool, bloating",Bisacodyl,5 ml syrup twice daily,Continuous,Take after food,Check blood pressure regularly
+120,General,Weakness,"tiredness, fatigue",Vitamin B Complex,5 ml syrup twice daily,As prescribed,Store in cool dry place,Check blood pressure regularly
+121,Digestive,Constipation,"hard stool, bloating",Lactulose,1 tablet twice daily,As prescribed,Take with water,Consult doctor if no improvement in 3 days
+122,Neurological,Insomnia,lack of sleep,Melatonin,5 ml syrup twice daily,5 days,Take with water,Get adequate rest
+123,Cardiac,Arrhythmia,irregular heartbeat,Amiodarone,1 tablet twice daily,5 days,Consult doctor if symptoms persist,Take full course even if you feel better
+124,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet every 8 hours,As prescribed,Stay hydrated,Consult doctor if no improvement in 3 days
+125,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet after meal,Continuous,Avoid alcohol,Check blood pressure regularly
+126,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet every 8 hours,10 days,Take with water,Check blood pressure regularly
+127,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 capsule daily,7 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+128,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 tablet twice daily,7 days,Consult doctor if symptoms persist,Take full course even if you feel better
+129,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 capsule daily,5 days,Take after food,Check blood pressure regularly
+130,General,Dehydration,"dry mouth, dizziness",ORS,1 tablet after meal,5 days,Store in cool dry place,Check blood pressure regularly
+131,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 tablet twice daily,5 days,Stay hydrated,Get adequate rest
+132,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,7 days,Avoid driving after taking medicine,Take full course even if you feel better
+133,General,Dehydration,"dry mouth, dizziness",ORS,1 tablet twice daily,7 days,Take after food,Check blood pressure regularly
+134,Neurological,Migraine,"headache, nausea",Ibuprofen,1 tablet twice daily,Continuous,Avoid alcohol,Consult doctor if no improvement in 3 days
+135,Neurological,Anxiety,"restlessness, tension",Alprazolam,1 capsule daily,As prescribed,Do not exceed recommended dose,Get adequate rest
+136,Digestive,Constipation,"hard stool, bloating",Bisacodyl,1 tablet every 8 hours,10 days,Avoid alcohol,Monitor blood sugar levels
+137,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 tablet after meal,5 days,Avoid driving after taking medicine,Monitor blood sugar levels
+138,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,5 ml syrup twice daily,7 days,Avoid driving after taking medicine,Check blood pressure regularly
+139,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet twice daily,As prescribed,Take with water,Monitor symptoms regularly
+140,Skin,Acne,"pimples, oily skin",Adapalene,5 ml syrup twice daily,Continuous,Take after food,Monitor blood sugar levels
+141,Infection,Urinary Tract Infection,burning urination,Cefixime,1 capsule daily,Continuous,Stay hydrated,Can be taken with meals
+142,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet every 8 hours,5 days,Store in cool dry place,Get adequate rest
+143,Neurological,Epilepsy,"seizure, convulsion",Valproate,1 tablet every 8 hours,10 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+144,Infection,Viral Infection,"fever, sore throat",Paracetamol,1 tablet every 8 hours,7 days,Do not exceed recommended dose,Can be taken with meals
+145,General,Pain,"body pain, headache",Diclofenac,1 tablet twice daily,Continuous,Avoid alcohol,Get adequate rest
+146,Digestive,Diarrhea,"loose motion, dehydration",Loperamide,1 tablet twice daily,As prescribed,Avoid alcohol,Can be taken with meals
+147,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,5 days,Avoid alcohol,Can be taken with meals
+148,Endocrine,PCOS,"irregular periods, acne",Clomiphene,1 capsule daily,As prescribed,Stay hydrated,Avoid spicy and oily food
+149,Endocrine,Diabetes,high blood sugar,Glimepiride,1 tablet every 8 hours,As prescribed,Take after food,Monitor symptoms regularly
+150,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,5 ml syrup twice daily,7 days,Do not exceed recommended dose,Avoid spicy and oily food
+151,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet twice daily,Continuous,Consult doctor if symptoms persist,Monitor symptoms regularly
+152,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 capsule daily,7 days,Avoid alcohol,Monitor blood sugar levels
+153,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet twice daily,Continuous,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+154,Skin,Fungal Infection,"itching, rashes",Clotrimazole,5 ml syrup twice daily,7 days,Take after food,Monitor symptoms regularly
+155,Neurological,Migraine,"headache, nausea",Ibuprofen,1 tablet twice daily,Continuous,Consult doctor if symptoms persist,Take full course even if you feel better
+156,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 capsule daily,5 days,Take after food,Avoid spicy and oily food
+157,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,5 ml syrup twice daily,As prescribed,Avoid alcohol,Monitor blood sugar levels
+158,Neurological,Insomnia,lack of sleep,Zolpidem,1 tablet every 8 hours,As prescribed,Stay hydrated,Monitor blood sugar levels
+159,Endocrine,Obesity,"overweight, high BMI",Orlistat,1 tablet every 8 hours,7 days,Take after food,Take full course even if you feel better
+160,Endocrine,Diabetes,high blood sugar,Metformin,5 ml syrup twice daily,As prescribed,Store in cool dry place,Can be taken with meals
+161,General,Pain,"body pain, headache",Paracetamol,1 capsule daily,As prescribed,Consult doctor if symptoms persist,Take full course even if you feel better
+162,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,10 days,Avoid alcohol,Avoid spicy and oily food
+163,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet after meal,5 days,Do not exceed recommended dose,Get adequate rest
+164,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet twice daily,10 days,Store in cool dry place,Avoid spicy and oily food
+165,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 tablet after meal,Continuous,Store in cool dry place,Take full course even if you feel better
+166,Neurological,Epilepsy,"seizure, convulsion",Valproate,1 tablet every 8 hours,Continuous,Store in cool dry place,Can be taken with meals
+167,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,1 tablet every 8 hours,7 days,Take after food,Avoid spicy and oily food
+168,Endocrine,Diabetes,high blood sugar,Metformin,1 tablet after meal,As prescribed,Stay hydrated,Take full course even if you feel better
+169,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,10 days,Take with water,Take full course even if you feel better
+170,Neurological,Insomnia,lack of sleep,Melatonin,5 ml syrup twice daily,As prescribed,Store in cool dry place,Get adequate rest
+171,Skin,Psoriasis,scaly patches,Betamethasone,1 tablet every 8 hours,Continuous,Avoid driving after taking medicine,Can be taken with meals
+172,Skin,Fungal Infection,"itching, rashes",Fluconazole,1 tablet every 8 hours,7 days,Stay hydrated,Check blood pressure regularly
+173,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet twice daily,10 days,Avoid driving after taking medicine,Avoid spicy and oily food
+174,Neurological,Insomnia,lack of sleep,Melatonin,1 capsule daily,7 days,Take after food,Can be taken with meals
+175,Respiratory,Cold,"runny nose, sore throat",Paracetamol,1 tablet every 8 hours,7 days,Consult doctor if symptoms persist,Can be taken with meals
+176,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 tablet after meal,10 days,Consult doctor if symptoms persist,Check blood pressure regularly
+177,General,Pain,"body pain, headache",Diclofenac,1 tablet after meal,Continuous,Take with water,Take full course even if you feel better
+178,Digestive,Ulcer,"stomach pain, heartburn",Ranitidine,1 tablet every 8 hours,5 days,Store in cool dry place,Avoid spicy and oily food
+179,Infection,Viral Infection,"fever, sore throat",Paracetamol,5 ml syrup twice daily,Continuous,Avoid alcohol,Monitor symptoms regularly
+180,Respiratory,Cold,"runny nose, sore throat",Paracetamol,5 ml syrup twice daily,10 days,Avoid alcohol,Take full course even if you feel better
+181,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,5 ml syrup twice daily,5 days,Stay hydrated,Consult doctor if no improvement in 3 days
+182,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,1 capsule daily,7 days,Take after food,Take full course even if you feel better
+183,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 tablet every 8 hours,Continuous,Avoid driving after taking medicine,Avoid spicy and oily food
+184,Endocrine,Diabetes,high blood sugar,Glimepiride,1 tablet after meal,7 days,Avoid driving after taking medicine,Check blood pressure regularly
+185,Cardiac,Hypertension,high blood pressure,Losartan,1 capsule daily,7 days,Take with water,Take full course even if you feel better
+186,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,5 ml syrup twice daily,As prescribed,Store in cool dry place,Consult doctor if no improvement in 3 days
+187,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet after meal,10 days,Avoid driving after taking medicine,Monitor symptoms regularly
+188,General,Pain,"body pain, headache",Paracetamol,5 ml syrup twice daily,5 days,Avoid alcohol,Check blood pressure regularly
+189,Respiratory,Cold,"runny nose, sore throat",Cetirizine,5 ml syrup twice daily,As prescribed,Consult doctor if symptoms persist,Monitor blood sugar levels
+190,Respiratory,Cold,"runny nose, sore throat",Paracetamol,1 tablet after meal,5 days,Do not exceed recommended dose,Take full course even if you feel better
+191,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet every 8 hours,5 days,Avoid alcohol,Check blood pressure regularly
+192,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet after meal,5 days,Take with water,Avoid spicy and oily food
+193,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 capsule daily,As prescribed,Do not exceed recommended dose,Monitor blood sugar levels
+194,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 tablet twice daily,Continuous,Store in cool dry place,Take full course even if you feel better
+195,Skin,Eczema,"dry skin, itching",Cetirizine,1 tablet twice daily,7 days,Avoid driving after taking medicine,Can be taken with meals
+196,Cardiac,Heart Failure,"fatigue, swelling",Digoxin,5 ml syrup twice daily,10 days,Store in cool dry place,Check blood pressure regularly
+197,Neurological,Migraine,"headache, nausea",Sumatriptan,1 tablet twice daily,Continuous,Do not exceed recommended dose,Check blood pressure regularly
+198,Respiratory,Bronchitis,"cough, chest congestion",Azithromycin,1 tablet after meal,Continuous,Store in cool dry place,Can be taken with meals
+199,Neurological,Migraine,"headache, nausea",Sumatriptan,1 tablet every 8 hours,5 days,Take after food,Avoid spicy and oily food
+200,Neurological,Anxiety,"restlessness, tension",Diazepam,1 tablet after meal,10 days,Avoid alcohol,Check blood pressure regularly
+201,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet every 8 hours,As prescribed,Stay hydrated,Avoid spicy and oily food
+202,Neurological,Insomnia,lack of sleep,Melatonin,5 ml syrup twice daily,As prescribed,Take with water,Can be taken with meals
+203,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,5 ml syrup twice daily,Continuous,Do not exceed recommended dose,Take full course even if you feel better
+204,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet after meal,7 days,Take after food,Consult doctor if no improvement in 3 days
+205,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 capsule daily,7 days,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+206,Cardiac,Heart Failure,"fatigue, swelling",Digoxin,1 tablet twice daily,7 days,Do not exceed recommended dose,Check blood pressure regularly
+207,Neurological,Insomnia,lack of sleep,Melatonin,1 tablet after meal,5 days,Do not exceed recommended dose,Check blood pressure regularly
+208,Endocrine,Obesity,"overweight, high BMI",Orlistat,5 ml syrup twice daily,7 days,Take with water,Monitor symptoms regularly
+209,Infection,Viral Infection,"fever, sore throat",Paracetamol,1 tablet after meal,10 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+210,Digestive,Constipation,"hard stool, bloating",Lactulose,1 capsule daily,As prescribed,Consult doctor if symptoms persist,Check blood pressure regularly
+211,General,Fever,"high temperature, chills",Ibuprofen,1 capsule daily,10 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+212,Skin,Eczema,"dry skin, itching",Cetirizine,1 tablet twice daily,As prescribed,Avoid driving after taking medicine,Monitor symptoms regularly
+213,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,5 ml syrup twice daily,As prescribed,Avoid alcohol,Monitor blood sugar levels
+214,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,5 ml syrup twice daily,5 days,Take with water,Take full course even if you feel better
+215,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 capsule daily,Continuous,Store in cool dry place,Check blood pressure regularly
+216,Cardiac,Arrhythmia,irregular heartbeat,Amiodarone,1 capsule daily,5 days,Take after food,Take full course even if you feel better
+217,Skin,Acne,"pimples, oily skin",Adapalene,1 capsule daily,As prescribed,Do not exceed recommended dose,Check blood pressure regularly
+218,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,5 ml syrup twice daily,5 days,Do not exceed recommended dose,Avoid spicy and oily food
+219,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 tablet twice daily,7 days,Avoid driving after taking medicine,Consult doctor if no improvement in 3 days
+220,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet twice daily,As prescribed,Avoid alcohol,Monitor blood sugar levels
+221,General,Pain,"body pain, headache",Paracetamol,1 capsule daily,As prescribed,Stay hydrated,Can be taken with meals
+222,Infection,Urinary Tract Infection,burning urination,Cefixime,5 ml syrup twice daily,Continuous,Stay hydrated,Consult doctor if no improvement in 3 days
+223,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet every 8 hours,Continuous,Consult doctor if symptoms persist,Take full course even if you feel better
+224,Endocrine,PCOS,"irregular periods, acne",Metformin,1 tablet twice daily,Continuous,Avoid driving after taking medicine,Monitor blood sugar levels
+225,Skin,Fungal Infection,"itching, rashes",Clotrimazole,1 tablet every 8 hours,7 days,Stay hydrated,Monitor blood sugar levels
+226,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 tablet twice daily,10 days,Avoid alcohol,Avoid spicy and oily food
+227,Neurological,Epilepsy,"seizure, convulsion",Valproate,5 ml syrup twice daily,7 days,Take with water,Monitor symptoms regularly
+228,General,Fever,"high temperature, chills",Paracetamol,5 ml syrup twice daily,5 days,Store in cool dry place,Monitor blood sugar levels
+229,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 tablet every 8 hours,10 days,Avoid alcohol,Can be taken with meals
+230,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet after meal,Continuous,Take after food,Get adequate rest
+231,Respiratory,Cold,"runny nose, sore throat",Paracetamol,5 ml syrup twice daily,5 days,Avoid driving after taking medicine,Avoid spicy and oily food
+232,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,5 ml syrup twice daily,5 days,Take with water,Check blood pressure regularly
+233,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 capsule daily,As prescribed,Avoid driving after taking medicine,Monitor blood sugar levels
+234,Cardiac,Heart Failure,"fatigue, swelling",Digoxin,1 capsule daily,10 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+235,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,1 tablet every 8 hours,Continuous,Consult doctor if symptoms persist,Can be taken with meals
+236,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,5 ml syrup twice daily,Continuous,Take with water,Get adequate rest
+237,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet after meal,5 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+238,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet every 8 hours,As prescribed,Avoid driving after taking medicine,Get adequate rest
+239,Skin,Psoriasis,scaly patches,Betamethasone,1 tablet every 8 hours,10 days,Avoid driving after taking medicine,Take full course even if you feel better
+240,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 capsule daily,As prescribed,Take after food,Monitor blood sugar levels
+241,Infection,Viral Infection,"fever, sore throat",Paracetamol,1 capsule daily,Continuous,Take after food,Monitor blood sugar levels
+242,Skin,Psoriasis,scaly patches,Coal Tar,1 capsule daily,10 days,Stay hydrated,Monitor symptoms regularly
+243,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 tablet twice daily,7 days,Take with water,Avoid spicy and oily food
+244,Endocrine,Obesity,"overweight, high BMI",Orlistat,1 tablet after meal,7 days,Avoid driving after taking medicine,Take full course even if you feel better
+245,Digestive,Ulcer,"stomach pain, heartburn",Ranitidine,1 capsule daily,7 days,Store in cool dry place,Check blood pressure regularly
+246,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,5 ml syrup twice daily,10 days,Avoid alcohol,Monitor blood sugar levels
+247,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet twice daily,5 days,Take after food,Check blood pressure regularly
+248,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,5 days,Stay hydrated,Get adequate rest
+249,Infection,Viral Infection,"fever, sore throat",Paracetamol,5 ml syrup twice daily,As prescribed,Avoid alcohol,Avoid spicy and oily food
+250,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 capsule daily,As prescribed,Stay hydrated,Monitor symptoms regularly
+251,Digestive,Gastritis,"stomach pain, acidity",Omeprazole,5 ml syrup twice daily,As prescribed,Take after food,Take full course even if you feel better
+252,Digestive,Gastritis,"stomach pain, acidity",Omeprazole,1 capsule daily,10 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+253,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet after meal,10 days,Take after food,Monitor blood sugar levels
+254,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet every 8 hours,10 days,Do not exceed recommended dose,Check blood pressure regularly
+255,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 capsule daily,5 days,Stay hydrated,Can be taken with meals
+256,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet every 8 hours,Continuous,Store in cool dry place,Take full course even if you feel better
+257,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet every 8 hours,Continuous,Do not exceed recommended dose,Get adequate rest
+258,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet twice daily,10 days,Stay hydrated,Monitor symptoms regularly
+259,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,5 ml syrup twice daily,Continuous,Avoid driving after taking medicine,Take full course even if you feel better
+260,Endocrine,Thyroid Disorder,"fatigue, weight change",Carbimazole,5 ml syrup twice daily,Continuous,Avoid alcohol,Get adequate rest
+261,General,Weakness,"tiredness, fatigue",Vitamin B Complex,5 ml syrup twice daily,Continuous,Take with water,Monitor symptoms regularly
+262,Neurological,Epilepsy,"seizure, convulsion",Valproate,1 tablet twice daily,7 days,Take after food,Get adequate rest
+263,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 tablet every 8 hours,10 days,Stay hydrated,Avoid spicy and oily food
+264,Cardiac,Hypertension,high blood pressure,Losartan,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+265,Endocrine,PCOS,"irregular periods, acne",Metformin,1 tablet every 8 hours,Continuous,Store in cool dry place,Consult doctor if no improvement in 3 days
+266,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet every 8 hours,5 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+267,Neurological,Insomnia,lack of sleep,Zolpidem,5 ml syrup twice daily,As prescribed,Store in cool dry place,Monitor symptoms regularly
+268,Neurological,Migraine,"headache, nausea",Ibuprofen,1 capsule daily,7 days,Take with water,Can be taken with meals
+269,Cardiac,Angina,"chest pain, short breath",Aspirin,1 tablet after meal,Continuous,Do not exceed recommended dose,Monitor symptoms regularly
+270,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,5 ml syrup twice daily,10 days,Do not exceed recommended dose,Can be taken with meals
+271,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet twice daily,10 days,Take after food,Monitor symptoms regularly
+272,Digestive,Constipation,"hard stool, bloating",Lactulose,1 capsule daily,10 days,Take after food,Get adequate rest
+273,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet twice daily,As prescribed,Consult doctor if symptoms persist,Get adequate rest
+274,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 capsule daily,7 days,Stay hydrated,Monitor blood sugar levels
+275,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,5 ml syrup twice daily,7 days,Avoid alcohol,Get adequate rest
+276,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,5 days,Avoid alcohol,Take full course even if you feel better
+277,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 tablet every 8 hours,7 days,Consult doctor if symptoms persist,Check blood pressure regularly
+278,Infection,Bacterial Infection,"fever, pain",Amoxicillin,1 tablet after meal,5 days,Take with water,Can be taken with meals
+279,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 capsule daily,Continuous,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+280,Cardiac,Hypertension,high blood pressure,Losartan,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Monitor blood sugar levels
+281,Cardiac,Angina,"chest pain, short breath",Aspirin,5 ml syrup twice daily,Continuous,Take after food,Monitor blood sugar levels
+282,General,Fever,"high temperature, chills",Ibuprofen,1 tablet twice daily,7 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+283,Endocrine,Obesity,"overweight, high BMI",Orlistat,1 tablet every 8 hours,7 days,Take with water,Consult doctor if no improvement in 3 days
+284,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet after meal,5 days,Stay hydrated,Avoid spicy and oily food
+285,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,7 days,Consult doctor if symptoms persist,Take full course even if you feel better
+286,Skin,Psoriasis,scaly patches,Betamethasone,1 capsule daily,5 days,Consult doctor if symptoms persist,Get adequate rest
+287,Neurological,Anxiety,"restlessness, tension",Alprazolam,1 capsule daily,5 days,Stay hydrated,Avoid spicy and oily food
+288,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,5 ml syrup twice daily,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+289,Musculoskeletal,Back Pain,lower back pain,Ibuprofen,5 ml syrup twice daily,Continuous,Avoid driving after taking medicine,Take full course even if you feel better
+290,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 tablet after meal,5 days,Stay hydrated,Take full course even if you feel better
+291,Infection,Viral Infection,"fever, sore throat",Acyclovir,1 tablet twice daily,10 days,Avoid alcohol,Monitor symptoms regularly
+292,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,5 ml syrup twice daily,As prescribed,Avoid driving after taking medicine,Monitor symptoms regularly
+293,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 capsule daily,7 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+294,Infection,Viral Infection,"fever, sore throat",Acyclovir,1 tablet after meal,As prescribed,Take after food,Get adequate rest
+295,Endocrine,Obesity,"overweight, high BMI",Phentermine,5 ml syrup twice daily,Continuous,Take with water,Consult doctor if no improvement in 3 days
+296,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet after meal,10 days,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+297,General,Dehydration,"dry mouth, dizziness",ORS,1 tablet after meal,5 days,Do not exceed recommended dose,Monitor symptoms regularly
+298,General,Dehydration,"dry mouth, dizziness",ORS,1 capsule daily,10 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+299,Skin,Psoriasis,scaly patches,Coal Tar,1 capsule daily,7 days,Take after food,Take full course even if you feel better
+300,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet twice daily,10 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+301,Neurological,Insomnia,lack of sleep,Melatonin,1 tablet every 8 hours,As prescribed,Do not exceed recommended dose,Get adequate rest
+302,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,7 days,Take with water,Get adequate rest
+303,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet twice daily,As prescribed,Take with water,Monitor blood sugar levels
+304,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet twice daily,10 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+305,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet every 8 hours,10 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+306,Skin,Fungal Infection,"itching, rashes",Fluconazole,5 ml syrup twice daily,10 days,Avoid alcohol,Take full course even if you feel better
+307,Neurological,Anxiety,"restlessness, tension",Diazepam,1 tablet twice daily,Continuous,Take after food,Take full course even if you feel better
+308,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet every 8 hours,10 days,Stay hydrated,Consult doctor if no improvement in 3 days
+309,Cardiac,Angina,"chest pain, short breath",Aspirin,1 tablet every 8 hours,Continuous,Avoid driving after taking medicine,Avoid spicy and oily food
+310,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,5 ml syrup twice daily,7 days,Store in cool dry place,Take full course even if you feel better
+311,Cardiac,Hypertension,high blood pressure,Amlodipine,1 capsule daily,Continuous,Do not exceed recommended dose,Check blood pressure regularly
+312,Skin,Eczema,"dry skin, itching",Cetirizine,1 tablet twice daily,7 days,Store in cool dry place,Avoid spicy and oily food
+313,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet after meal,As prescribed,Avoid driving after taking medicine,Monitor symptoms regularly
+314,General,Fever,"high temperature, chills",Ibuprofen,1 tablet twice daily,Continuous,Stay hydrated,Take full course even if you feel better
+315,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,5 ml syrup twice daily,Continuous,Avoid driving after taking medicine,Can be taken with meals
+316,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,1 tablet after meal,10 days,Stay hydrated,Take full course even if you feel better
+317,Skin,Psoriasis,scaly patches,Betamethasone,1 tablet after meal,10 days,Consult doctor if symptoms persist,Monitor blood sugar levels
+318,General,Pain,"body pain, headache",Diclofenac,1 tablet after meal,Continuous,Store in cool dry place,Monitor symptoms regularly
+319,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet after meal,Continuous,Avoid alcohol,Consult doctor if no improvement in 3 days
+320,Neurological,Insomnia,lack of sleep,Zolpidem,1 capsule daily,Continuous,Consult doctor if symptoms persist,Monitor blood sugar levels
+321,General,Pain,"body pain, headache",Paracetamol,5 ml syrup twice daily,10 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+322,Skin,Psoriasis,scaly patches,Betamethasone,5 ml syrup twice daily,5 days,Avoid driving after taking medicine,Get adequate rest
+323,General,Fever,"high temperature, chills",Ibuprofen,1 tablet after meal,7 days,Consult doctor if symptoms persist,Take full course even if you feel better
+324,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,1 tablet after meal,10 days,Do not exceed recommended dose,Check blood pressure regularly
+325,Cardiac,Heart Failure,"fatigue, swelling",Digoxin,5 ml syrup twice daily,As prescribed,Stay hydrated,Can be taken with meals
+326,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,5 ml syrup twice daily,Continuous,Take with water,Check blood pressure regularly
+327,Neurological,Insomnia,lack of sleep,Melatonin,1 tablet every 8 hours,5 days,Take with water,Avoid spicy and oily food
+328,Infection,Urinary Tract Infection,burning urination,Cefixime,1 capsule daily,10 days,Take after food,Can be taken with meals
+329,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet twice daily,7 days,Do not exceed recommended dose,Can be taken with meals
+330,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet every 8 hours,As prescribed,Avoid alcohol,Check blood pressure regularly
+331,Digestive,Diarrhea,"loose motion, dehydration",Loperamide,1 tablet twice daily,5 days,Take with water,Take full course even if you feel better
+332,General,Dehydration,"dry mouth, dizziness",Electrolyte Solution,1 tablet after meal,Continuous,Do not exceed recommended dose,Avoid spicy and oily food
+333,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet after meal,As prescribed,Store in cool dry place,Consult doctor if no improvement in 3 days
+334,Endocrine,Diabetes,high blood sugar,Metformin,1 tablet twice daily,5 days,Take after food,Take full course even if you feel better
+335,Musculoskeletal,Gout,"joint pain, uric acid",Colchicine,5 ml syrup twice daily,7 days,Avoid driving after taking medicine,Take full course even if you feel better
+336,Infection,Urinary Tract Infection,burning urination,Cefixime,1 tablet every 8 hours,Continuous,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+337,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 tablet after meal,7 days,Avoid driving after taking medicine,Can be taken with meals
+338,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,1 tablet after meal,10 days,Avoid alcohol,Consult doctor if no improvement in 3 days
+339,Skin,Fungal Infection,"itching, rashes",Fluconazole,1 tablet after meal,Continuous,Consult doctor if symptoms persist,Can be taken with meals
+340,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,1 tablet every 8 hours,5 days,Avoid driving after taking medicine,Check blood pressure regularly
+341,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet after meal,As prescribed,Consult doctor if symptoms persist,Get adequate rest
+342,Neurological,Insomnia,lack of sleep,Zolpidem,1 tablet twice daily,10 days,Store in cool dry place,Monitor symptoms regularly
+343,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 tablet every 8 hours,5 days,Do not exceed recommended dose,Get adequate rest
+344,Cardiac,Arrhythmia,irregular heartbeat,Amiodarone,1 tablet twice daily,10 days,Take with water,Get adequate rest
+345,Neurological,Migraine,"headache, nausea",Ibuprofen,5 ml syrup twice daily,5 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+346,Neurological,Insomnia,lack of sleep,Melatonin,1 tablet after meal,7 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+347,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,5 ml syrup twice daily,As prescribed,Consult doctor if symptoms persist,Can be taken with meals
+348,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet after meal,7 days,Take with water,Monitor symptoms regularly
+349,Endocrine,PCOS,"irregular periods, acne",Metformin,1 capsule daily,5 days,Take with water,Can be taken with meals
+350,Endocrine,Thyroid Disorder,"fatigue, weight change",Carbimazole,1 capsule daily,5 days,Do not exceed recommended dose,Get adequate rest
+351,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet every 8 hours,5 days,Store in cool dry place,Monitor symptoms regularly
+352,Skin,Fungal Infection,"itching, rashes",Fluconazole,1 tablet after meal,As prescribed,Stay hydrated,Monitor symptoms regularly
+353,Endocrine,PCOS,"irregular periods, acne",Metformin,1 tablet twice daily,Continuous,Take with water,Consult doctor if no improvement in 3 days
+354,Endocrine,PCOS,"irregular periods, acne",Metformin,1 capsule daily,10 days,Stay hydrated,Avoid spicy and oily food
+355,Digestive,Gastritis,"stomach pain, acidity",Omeprazole,1 tablet twice daily,Continuous,Take after food,Can be taken with meals
+356,Respiratory,Bronchitis,"cough, chest congestion",Azithromycin,1 tablet after meal,As prescribed,Take after food,Can be taken with meals
+357,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet every 8 hours,5 days,Avoid driving after taking medicine,Check blood pressure regularly
+358,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 tablet twice daily,5 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+359,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,1 tablet twice daily,5 days,Take with water,Avoid spicy and oily food
+360,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 tablet after meal,10 days,Do not exceed recommended dose,Can be taken with meals
+361,Skin,Acne,"pimples, oily skin",Clindamycin,1 tablet after meal,Continuous,Avoid driving after taking medicine,Check blood pressure regularly
+362,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet twice daily,As prescribed,Stay hydrated,Monitor blood sugar levels
+363,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,1 tablet twice daily,10 days,Avoid driving after taking medicine,Monitor blood sugar levels
+364,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,5 ml syrup twice daily,5 days,Do not exceed recommended dose,Can be taken with meals
+365,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 capsule daily,7 days,Do not exceed recommended dose,Monitor symptoms regularly
+366,General,Fever,"high temperature, chills",Paracetamol,1 tablet twice daily,7 days,Do not exceed recommended dose,Monitor symptoms regularly
+367,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 tablet twice daily,As prescribed,Take with water,Monitor blood sugar levels
+368,Digestive,Constipation,"hard stool, bloating",Lactulose,1 capsule daily,7 days,Take after food,Can be taken with meals
+369,Cardiac,Hypertension,high blood pressure,Amlodipine,1 capsule daily,10 days,Avoid alcohol,Take full course even if you feel better
+370,General,Fever,"high temperature, chills",Ibuprofen,1 tablet twice daily,5 days,Avoid alcohol,Get adequate rest
+371,Skin,Eczema,"dry skin, itching",Hydrocortisone,1 tablet after meal,10 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+372,General,Weakness,"tiredness, fatigue",Iron Supplements,1 tablet twice daily,As prescribed,Store in cool dry place,Take full course even if you feel better
+373,Skin,Eczema,"dry skin, itching",Hydrocortisone,5 ml syrup twice daily,5 days,Stay hydrated,Can be taken with meals
+374,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 tablet twice daily,7 days,Take after food,Monitor blood sugar levels
+375,Endocrine,Diabetes,high blood sugar,Metformin,1 capsule daily,7 days,Take with water,Avoid spicy and oily food
+376,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,5 ml syrup twice daily,5 days,Avoid driving after taking medicine,Monitor symptoms regularly
+377,Respiratory,Bronchitis,"cough, chest congestion",Azithromycin,1 tablet after meal,As prescribed,Store in cool dry place,Monitor blood sugar levels
+378,Cardiac,Arrhythmia,irregular heartbeat,Amiodarone,1 capsule daily,Continuous,Do not exceed recommended dose,Avoid spicy and oily food
+379,Neurological,Migraine,"headache, nausea",Ibuprofen,1 tablet twice daily,7 days,Avoid alcohol,Take full course even if you feel better
+380,General,Pain,"body pain, headache",Paracetamol,1 tablet twice daily,5 days,Take after food,Check blood pressure regularly
+381,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet twice daily,7 days,Do not exceed recommended dose,Take full course even if you feel better
+382,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet twice daily,5 days,Do not exceed recommended dose,Get adequate rest
+383,General,Pain,"body pain, headache",Diclofenac,1 capsule daily,10 days,Avoid alcohol,Can be taken with meals
+384,Endocrine,Diabetes,high blood sugar,Metformin,1 capsule daily,10 days,Avoid alcohol,Get adequate rest
+385,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,5 ml syrup twice daily,5 days,Take with water,Monitor blood sugar levels
+386,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,1 capsule daily,7 days,Take after food,Avoid spicy and oily food
+387,Digestive,Constipation,"hard stool, bloating",Lactulose,1 tablet twice daily,5 days,Do not exceed recommended dose,Avoid spicy and oily food
+388,Digestive,Diarrhea,"loose motion, dehydration",Loperamide,1 tablet after meal,Continuous,Take after food,Avoid spicy and oily food
+389,Cardiac,Hypertension,high blood pressure,Amlodipine,1 capsule daily,5 days,Avoid driving after taking medicine,Get adequate rest
+390,Cardiac,Angina,"chest pain, short breath",Aspirin,5 ml syrup twice daily,10 days,Avoid driving after taking medicine,Take full course even if you feel better
+391,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,Continuous,Take after food,Monitor blood sugar levels
+392,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,1 tablet twice daily,As prescribed,Avoid driving after taking medicine,Get adequate rest
+393,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet every 8 hours,7 days,Consult doctor if symptoms persist,Monitor blood sugar levels
+394,Cardiac,Hypertension,high blood pressure,Amlodipine,1 tablet twice daily,7 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+395,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 capsule daily,5 days,Stay hydrated,Consult doctor if no improvement in 3 days
+396,Musculoskeletal,Back Pain,lower back pain,Ibuprofen,1 capsule daily,Continuous,Stay hydrated,Consult doctor if no improvement in 3 days
+397,Digestive,Gastritis,"stomach pain, acidity",Omeprazole,1 tablet after meal,Continuous,Take with water,Monitor blood sugar levels
+398,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet every 8 hours,10 days,Take with water,Get adequate rest
+399,Digestive,Constipation,"hard stool, bloating",Lactulose,1 tablet every 8 hours,Continuous,Stay hydrated,Get adequate rest
+400,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,5 ml syrup twice daily,10 days,Do not exceed recommended dose,Avoid spicy and oily food
+401,Endocrine,Obesity,"overweight, high BMI",Orlistat,1 tablet twice daily,As prescribed,Store in cool dry place,Monitor symptoms regularly
+402,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,1 capsule daily,Continuous,Store in cool dry place,Consult doctor if no improvement in 3 days
+403,Endocrine,Diabetes,high blood sugar,Metformin,1 tablet every 8 hours,7 days,Avoid driving after taking medicine,Take full course even if you feel better
+404,Neurological,Anxiety,"restlessness, tension",Alprazolam,5 ml syrup twice daily,Continuous,Avoid driving after taking medicine,Get adequate rest
+405,Digestive,Diarrhea,"loose motion, dehydration",Loperamide,5 ml syrup twice daily,As prescribed,Take with water,Get adequate rest
+406,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,5 ml syrup twice daily,10 days,Take after food,Monitor blood sugar levels
+407,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,1 tablet after meal,5 days,Store in cool dry place,Get adequate rest
+408,Infection,Urinary Tract Infection,burning urination,Cefixime,1 tablet every 8 hours,7 days,Avoid driving after taking medicine,Monitor blood sugar levels
+409,Respiratory,Bronchitis,"cough, chest congestion",Azithromycin,1 capsule daily,5 days,Avoid alcohol,Monitor blood sugar levels
+410,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet after meal,As prescribed,Consult doctor if symptoms persist,Monitor symptoms regularly
+411,Respiratory,Cold,"runny nose, sore throat",Paracetamol,1 tablet every 8 hours,Continuous,Do not exceed recommended dose,Get adequate rest
+412,Digestive,Constipation,"hard stool, bloating",Bisacodyl,1 tablet after meal,As prescribed,Consult doctor if symptoms persist,Take full course even if you feel better
+413,Neurological,Insomnia,lack of sleep,Zolpidem,1 tablet every 8 hours,As prescribed,Take with water,Monitor symptoms regularly
+414,Skin,Acne,"pimples, oily skin",Adapalene,1 tablet twice daily,As prescribed,Do not exceed recommended dose,Can be taken with meals
+415,Neurological,Anxiety,"restlessness, tension",Alprazolam,1 tablet after meal,10 days,Store in cool dry place,Avoid spicy and oily food
+416,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 capsule daily,7 days,Consult doctor if symptoms persist,Monitor blood sugar levels
+417,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,1 tablet twice daily,7 days,Avoid alcohol,Monitor blood sugar levels
+418,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Fluticasone,1 capsule daily,As prescribed,Avoid alcohol,Consult doctor if no improvement in 3 days
+419,Digestive,Gastritis,"stomach pain, acidity",Omeprazole,5 ml syrup twice daily,As prescribed,Do not exceed recommended dose,Avoid spicy and oily food
+420,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,1 tablet after meal,10 days,Avoid driving after taking medicine,Get adequate rest
+421,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet every 8 hours,7 days,Consult doctor if symptoms persist,Consult doctor if no improvement in 3 days
+422,Infection,Ear Infection,"ear pain, discharge",Ciprofloxacin Ear Drops,1 tablet after meal,7 days,Consult doctor if symptoms persist,Monitor blood sugar levels
+423,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet every 8 hours,10 days,Do not exceed recommended dose,Avoid spicy and oily food
+424,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 capsule daily,Continuous,Store in cool dry place,Monitor blood sugar levels
+425,Neurological,Anxiety,"restlessness, tension",Diazepam,1 tablet every 8 hours,5 days,Avoid driving after taking medicine,Monitor blood sugar levels
+426,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet after meal,Continuous,Take with water,Monitor symptoms regularly
+427,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,1 tablet every 8 hours,Continuous,Store in cool dry place,Consult doctor if no improvement in 3 days
+428,Endocrine,Thyroid Disorder,"fatigue, weight change",Levothyroxine,5 ml syrup twice daily,5 days,Stay hydrated,Consult doctor if no improvement in 3 days
+429,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet twice daily,10 days,Take with water,Take full course even if you feel better
+430,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,1 tablet twice daily,10 days,Avoid alcohol,Take full course even if you feel better
+431,Cardiac,Hypertension,high blood pressure,Losartan,1 tablet every 8 hours,10 days,Store in cool dry place,Consult doctor if no improvement in 3 days
+432,Digestive,Constipation,"hard stool, bloating",Bisacodyl,1 tablet every 8 hours,10 days,Avoid driving after taking medicine,Check blood pressure regularly
+433,Endocrine,Obesity,"overweight, high BMI",Phentermine,1 tablet twice daily,7 days,Avoid alcohol,Check blood pressure regularly
+434,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet after meal,Continuous,Store in cool dry place,Get adequate rest
+435,Infection,Bacterial Infection,"fever, pain",Amoxicillin,5 ml syrup twice daily,As prescribed,Take after food,Monitor blood sugar levels
+436,Endocrine,Diabetes,high blood sugar,Metformin,5 ml syrup twice daily,Continuous,Take after food,Monitor blood sugar levels
+437,Cardiac,Heart Failure,"fatigue, swelling",Furosemide,5 ml syrup twice daily,5 days,Avoid alcohol,Monitor symptoms regularly
+438,Respiratory,Asthma,"wheezing, shortness of breath",Salbutamol,1 tablet twice daily,7 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+439,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 tablet twice daily,As prescribed,Avoid alcohol,Can be taken with meals
+440,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,1 tablet after meal,10 days,Stay hydrated,Take full course even if you feel better
+441,Respiratory,Bronchitis,"cough, chest congestion",Azithromycin,1 tablet twice daily,7 days,Stay hydrated,Monitor blood sugar levels
+442,Neurological,Migraine,"headache, nausea",Ibuprofen,1 tablet every 8 hours,As prescribed,Stay hydrated,Get adequate rest
+443,Neurological,Migraine,"headache, nausea",Sumatriptan,1 tablet twice daily,7 days,Take with water,Can be taken with meals
+444,Skin,Eczema,"dry skin, itching",Hydrocortisone,5 ml syrup twice daily,10 days,Do not exceed recommended dose,Monitor symptoms regularly
+445,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,1 tablet every 8 hours,10 days,Take with water,Consult doctor if no improvement in 3 days
+446,Cardiac,Arrhythmia,irregular heartbeat,Amiodarone,1 tablet after meal,10 days,Consult doctor if symptoms persist,Get adequate rest
+447,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet twice daily,7 days,Avoid alcohol,Avoid spicy and oily food
+448,Infection,Urinary Tract Infection,burning urination,Nitrofurantoin,5 ml syrup twice daily,As prescribed,Take with water,Check blood pressure regularly
+449,Musculoskeletal,Gout,"joint pain, uric acid",Allopurinol,1 tablet after meal,5 days,Stay hydrated,Can be taken with meals
+450,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 tablet twice daily,As prescribed,Avoid driving after taking medicine,Can be taken with meals
+451,General,Weakness,"tiredness, fatigue",Vitamin B Complex,1 tablet after meal,Continuous,Take after food,Take full course even if you feel better
+452,Infection,Ear Infection,"ear pain, discharge",Amoxicillin,5 ml syrup twice daily,5 days,Take after food,Monitor symptoms regularly
+453,Digestive,Constipation,"hard stool, bloating",Lactulose,5 ml syrup twice daily,10 days,Stay hydrated,Can be taken with meals
+454,Musculoskeletal,Muscle Cramps,stiff muscles,Magnesium,1 tablet twice daily,10 days,Consult doctor if symptoms persist,Take full course even if you feel better
+455,Musculoskeletal,Back Pain,lower back pain,Ibuprofen,5 ml syrup twice daily,10 days,Store in cool dry place,Take full course even if you feel better
+456,Endocrine,PCOS,"irregular periods, acne",Clomiphene,5 ml syrup twice daily,7 days,Do not exceed recommended dose,Monitor blood sugar levels
+457,Endocrine,PCOS,"irregular periods, acne",Clomiphene,1 tablet after meal,7 days,Do not exceed recommended dose,Take full course even if you feel better
+458,Digestive,Constipation,"hard stool, bloating",Bisacodyl,5 ml syrup twice daily,10 days,Avoid alcohol,Avoid spicy and oily food
+459,Endocrine,Diabetes,high blood sugar,Metformin,1 tablet every 8 hours,5 days,Avoid driving after taking medicine,Can be taken with meals
+460,Respiratory,Allergic Rhinitis,"sneezing, itchy nose",Loratadine,1 tablet twice daily,Continuous,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+461,Musculoskeletal,Muscle Cramps,stiff muscles,Cyclobenzaprine,1 capsule daily,7 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+462,Skin,Fungal Infection,"itching, rashes",Fluconazole,1 capsule daily,As prescribed,Do not exceed recommended dose,Check blood pressure regularly
+463,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,1 tablet twice daily,5 days,Avoid alcohol,Take full course even if you feel better
+464,Cardiac,Heart Failure,"fatigue, swelling",Digoxin,1 tablet after meal,5 days,Store in cool dry place,Monitor blood sugar levels
+465,Respiratory,Bronchitis,"cough, chest congestion",Ambroxol,1 capsule daily,As prescribed,Take after food,Get adequate rest
+466,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 capsule daily,Continuous,Consult doctor if symptoms persist,Get adequate rest
+467,General,Pain,"body pain, headache",Diclofenac,1 tablet every 8 hours,As prescribed,Stay hydrated,Take full course even if you feel better
+468,Digestive,Diarrhea,"loose motion, dehydration",ORS,1 tablet after meal,Continuous,Take with water,Can be taken with meals
+469,Cardiac,Angina,"chest pain, short breath",Nitroglycerin,1 tablet every 8 hours,Continuous,Avoid alcohol,Take full course even if you feel better
+470,Infection,Viral Infection,"fever, sore throat",Paracetamol,5 ml syrup twice daily,Continuous,Do not exceed recommended dose,Consult doctor if no improvement in 3 days
+471,Musculoskeletal,Gout,"joint pain, uric acid",Colchicine,1 tablet twice daily,7 days,Store in cool dry place,Monitor symptoms regularly
+472,Digestive,Ulcer,"stomach pain, heartburn",Sucralfate,1 tablet after meal,As prescribed,Consult doctor if symptoms persist,Take full course even if you feel better
+473,Musculoskeletal,Arthritis,"joint pain, swelling",Naproxen,1 tablet after meal,Continuous,Do not exceed recommended dose,Get adequate rest
+474,Skin,Eczema,"dry skin, itching",Cetirizine,1 tablet twice daily,Continuous,Avoid driving after taking medicine,Check blood pressure regularly
+475,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 capsule daily,Continuous,Take with water,Can be taken with meals
+476,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 capsule daily,7 days,Consult doctor if symptoms persist,Avoid spicy and oily food
+477,Respiratory,Cold,"runny nose, sore throat",Cetirizine,1 capsule daily,7 days,Consult doctor if symptoms persist,Monitor symptoms regularly
+478,Endocrine,Thyroid Disorder,"fatigue, weight change",Carbimazole,5 ml syrup twice daily,Continuous,Avoid alcohol,Monitor symptoms regularly
+479,Neurological,Epilepsy,"seizure, convulsion",Valproate,1 tablet every 8 hours,7 days,Take after food,Avoid spicy and oily food
+480,Endocrine,Obesity,"overweight, high BMI",Orlistat,5 ml syrup twice daily,Continuous,Do not exceed recommended dose,Can be taken with meals
+481,General,Weakness,"tiredness, fatigue",Vitamin B Complex,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Check blood pressure regularly
+482,Neurological,Epilepsy,"seizure, convulsion",Carbamazepine,5 ml syrup twice daily,Continuous,Stay hydrated,Avoid spicy and oily food
+483,Digestive,Constipation,"hard stool, bloating",Lactulose,1 tablet twice daily,7 days,Do not exceed recommended dose,Monitor blood sugar levels
+484,Cardiac,Angina,"chest pain, short breath",Aspirin,1 tablet every 8 hours,7 days,Avoid driving after taking medicine,Monitor symptoms regularly
+485,Endocrine,PCOS,"irregular periods, acne",Metformin,1 capsule daily,7 days,Avoid driving after taking medicine,Monitor blood sugar levels
+486,Digestive,Diarrhea,"loose motion, dehydration",Loperamide,1 tablet every 8 hours,10 days,Take after food,Monitor blood sugar levels
+487,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 tablet every 8 hours,Continuous,Do not exceed recommended dose,Avoid spicy and oily food
+488,Cardiac,Hypertension,high blood pressure,Losartan,5 ml syrup twice daily,5 days,Take after food,Monitor symptoms regularly
+489,Respiratory,Asthma,"wheezing, shortness of breath",Montelukast,1 tablet twice daily,5 days,Store in cool dry place,Take full course even if you feel better
+490,Skin,Fungal Infection,"itching, rashes",Clotrimazole,1 tablet after meal,7 days,Stay hydrated,Can be taken with meals
+491,Cardiac,Arrhythmia,irregular heartbeat,Propranolol,5 ml syrup twice daily,Continuous,Store in cool dry place,Get adequate rest
+492,Musculoskeletal,Arthritis,"joint pain, swelling",Diclofenac,5 ml syrup twice daily,Continuous,Store in cool dry place,Can be taken with meals
+493,Infection,Bacterial Infection,"fever, pain",Ciprofloxacin,1 tablet twice daily,10 days,Take with water,Monitor symptoms regularly
+494,Cardiac,Angina,"chest pain, short breath",Aspirin,5 ml syrup twice daily,10 days,Take after food,Can be taken with meals
+495,Skin,Fungal Infection,"itching, rashes",Fluconazole,1 tablet twice daily,5 days,Take with water,Consult doctor if no improvement in 3 days
+496,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 tablet after meal,7 days,Avoid alcohol,Take full course even if you feel better
+497,Musculoskeletal,Back Pain,lower back pain,Paracetamol,1 tablet after meal,As prescribed,Store in cool dry place,Can be taken with meals
+498,Digestive,Gastritis,"stomach pain, acidity",Pantoprazole,1 capsule daily,10 days,Stay hydrated,Check blood pressure regularly
+499,General,Pain,"body pain, headache",Diclofenac,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Check blood pressure regularly
+500,Cardiac,Angina,"chest pain, short breath",Aspirin,5 ml syrup twice daily,5 days,Consult doctor if symptoms persist,Monitor symptoms regularly
