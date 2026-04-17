@@ -91,7 +91,7 @@ Update firebase-config.js with your Firebase project credentials.
 ```
 python app.py
 ``` 
-Open browser: http://localhost:5000
+Open browser: http://localhost:50001
 
 📊 Dataset Used
 
