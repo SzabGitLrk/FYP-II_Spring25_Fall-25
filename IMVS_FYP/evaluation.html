@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation - IMVS</title>
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC107;
+            --black: #121212;
+            --dark-grey: #1E1E1E;
+            --medium-grey: #2D2D2D;
+            --light-grey: #404040;
+            --text-grey: #B0B0B0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            color: var(--white);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--dark-grey);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links a {
+            color: var(--text-grey);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .card {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid var(--light-grey);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-yellow);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .student-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--medium-grey);
+            border: 1px solid var(--light-grey);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--medium-grey);
+            border: 2px dashed var(--light-grey);
+            border-radius: 8px;
+            color: var(--text-grey);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input:hover {
+            border-color: var(--primary-yellow);
+            background: var(--light-grey);
+        }
+
+        .slider-container {
+            background: var(--medium-grey);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .slider {
+            width: 100%;
+            height: 6px;
+            background: var(--light-grey);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            background: var(--dark-yellow);
+            transform: scale(1.1);
+        }
+
+        .weight-display {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-yellow);
+            margin-top: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            color: var(--black);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+        }
+
+        .loading-box {
+            background: var(--dark-grey);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--primary-yellow);
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--light-grey);
+            border-top: 4px solid var(--primary-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result-box {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-yellow);
+            display: none;
+        }
+
+        .result-box h2 {
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .result-content {
+            background: var(--medium-grey);
+            padding: 20px;
+            border-radius: 8px;
+            color: var(--white);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-yellow), transparent);
+            margin: 30px 0;
+        }
+
+        .file-info {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>IMVS - Evaluation</h1>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('history') }}">History</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="loadingOverlay">
+            <div class="loading-box">
+                <div class="spinner"></div>
+                <h3>Processing...</h3>
+                <p>Please wait while we analyze your images</p>
+            </div>
+        </div>
+
+        <!-- Student Information -->
+        <div class="card">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">👤 Student Information</h2>
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" id="student_name" placeholder="Enter student name" required>
+                </div>
+                <div class="form-group">
+                    <label for="batch">Batch/Class</label>
+                    <input type="text" id="batch" placeholder="Enter batch or class" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="card">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">📁 Upload Answer Sheets</h2>
+                
+                <div class="form-group">
+                    <label for="image1">📚 Teacher's Answer Sheet</label>
+                    <input type="file" class="file-input" name="image1" accept="image/*" required>
+                    <div class="file-info">Supported formats: JPG, PNG, JPEG</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="image2">📝 Student's Answer Sheet</label>
+                    <input type="file" class="file-input" name="image2" accept="image/*" required>
+                    <div class="file-info">Supported formats: JPG, PNG, JPEG</div>
+                </div>
+                
+                <button type="submit" class="btn">🔍 Extract Text from Images</button>
+            </form>
+        </div>
+
+        <!-- Text Extraction Results -->
+        <div class="card" id="textSection" style="display:none;">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">📖 Extracted Text</h2>
+            
+            <div class="form-group">
+                <label for="teacher_text">Teacher's Answer</label>
+                <textarea id="teacher_text" placeholder="Extracted teacher text will appear here..."></textarea>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-group">
+                <label for="student_text">Student's Answer</label>
+                <textarea id="student_text" placeholder="Extracted student text will appear here..."></textarea>
+            </div>
+
+            <div class="slider-container">
+                <label for="marks_weight">🎯 Marks Weight: <span id="weight_label">50</span>%</label>
+                <input type="range" class="slider" id="marks_weight" min="10" max="100" value="50" step="10">
+            </div>
+
+            <button id="evaluateBtn" class="btn">📊 Evaluate Answer</button>
+        </div>
+
+        <!-- Results -->
+        <div class="result-box" id="evaluation_result">
+            <h2>📈 Evaluation Result</h2>
+            <div class="result-content" id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const loadingOverlay = document.getElementById("loadingOverlay");
+        const textSection = document.getElementById("textSection");
+        const resultBox = document.getElementById("evaluation_result");
+        const resultContent = document.getElementById("resultContent");
+        const slider = document.getElementById('marks_weight');
+        const weightLabel = document.getElementById('weight_label');
+        const studentName = document.getElementById('student_name');
+        const batch = document.getElementById('batch');
+
+        function showLoading() {
+            loadingOverlay.style.display = "flex";
+        }
+
+        function hideLoading() {
+            loadingOverlay.style.display = "none";
+        }
+
+        // Update slider label
+        slider.addEventListener('input', () => {
+            weightLabel.textContent = slider.value;
+        });
+
+        // Handle form submission
+        const form = document.getElementById('uploadForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!studentName.value.trim() || !batch.value.trim()) {
+                alert('Please fill in student name and batch information.');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('/extract_text', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                
+                const data = await response.json();
+                
+                document.getElementById('teacher_text').value = data.teacher_text || 'No text extracted';
+                document.getElementById('student_text').value = data.student_text || 'No text extracted';
+                textSection.style.display = 'block';
+                
+                // Scroll to text section
+                textSection.scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error extracting text. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        });
+
+        // Handle evaluation
+        document.getElementById('evaluateBtn').addEventListener('click', async () => {
+            showLoading();
+            
+            try {
+                const teacherText = document.getElementById('teacher_text').value;
+                const studentText = document.getElementById('student_text').value;
+                const weight = slider.value;
+
+                if (!teacherText.trim() || !studentText.trim()) {
+                    alert('Please ensure both text fields are filled.');
+                    hideLoading();
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('teacher_text', teacherText);
+                formData.append('student_text', studentText);
+                formData.append('marks_weight', weight);
+                formData.append('student_name', studentName.value);
+                formData.append('batch', batch.value);
+
+                const response = await fetch('/evaluate', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Evaluation failed');
+                }
+
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Format the evaluation result better
+                let evaluationText = data.evaluation || 'No evaluation result received.';
+                
+                // Add some styling to the output
+                resultContent.innerHTML = `
+                    <div style="margin-bottom: 15px;">
+                        <strong style="color: var(--primary-yellow);">📊 ${evaluationText.split('\n')[0]}</strong>
+                    </div>
+                    <div>
+                        <strong style="color: var(--primary-yellow);">💡 ${evaluationText.split('\n')[1]}</strong>
+                    </div>
+                `;
+                
+                resultBox.style.display = "block";
+                
+                // Scroll to result
+                resultBox.scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error during evaluation. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - IMVS</title>
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC107;
+            --black: #121212;
+            --dark-grey: #1E1E1E;
+            --medium-grey: #2D2D2D;
+            --light-grey: #404040;
+            --text-grey: #B0B0B0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            color: var(--white);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--dark-grey);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links a {
+            color: var(--text-grey);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .welcome-section p {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--light-grey);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-yellow);
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-grey);
+            line-height: 1.6;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid var(--primary-yellow);
+            text-align: center;
+        }
+
+        .modal h2 {
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+        }
+
+        .modal p {
+            color: var(--text-grey);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            background: var(--primary-yellow);
+            color: var(--black);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>IMVS Dashboard</h1>
+        </div>
+        <div class="nav-links">
+            <span style="color: var(--text-grey);">Welcome, {{ username }}</span>
+            
+            <a href="{{ url_for('history') }}">History</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+    
+
+<!-- Main Content -->
+<div class="container">
+    <div class="welcome-section">
+        <h2>Welcome to IMVS</h2>
+        <p>Intelligent Marks Vision System - AI-powered answer evaluation</p>
+    </div>
+
+   <!-- Add this to the features-grid section -->
+<div class="features-grid">
+
+
+    <div class="feature-card" onclick="window.location.href='/advanced_evaluation'">
+        <div class="feature-icon">🚀</div>
+        <h3>Advanced Evaluation</h3>
+        <p>Upload PDFs with multiple questions and answers for comprehensive exam evaluation.</p>
+    </div>
+
+    <div class="feature-card" onclick="window.location.href='/history'">
+        <div class="feature-icon">📚</div>
+        <h3>Evaluation History</h3>
+        <p>View all your previous evaluations with detailed records of marks and feedback.</p>
+    </div>
+</div>
+</div>
+    <!-- Information Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <h2>📝 Important Notice</h2>
+            <p><strong>This project currently supports only theoretical questions and answers.</strong></p>
+            <p>Our AI system is optimized for evaluating written responses in subjects like Science, History, Literature, and general knowledge topics.</p>
+            <p>In the future, we will enhance the system to support more subjects including mathematics, diagrams, and complex problem-solving.</p>
+            <button class="close-modal" onclick="closeModal()">I Understand</button>
+        </div>
+    </div>
+
+    <script>
+        // Show modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('infoModal').style.display = 'flex';
+            }, 1000);
+        });
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

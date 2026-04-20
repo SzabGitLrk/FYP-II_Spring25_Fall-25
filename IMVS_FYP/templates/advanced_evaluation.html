@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Evaluation - IMVS</title>
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC107;
+            --black: #121212;
+            --dark-grey: #1E1E1E;
+            --medium-grey: #2D2D2D;
+            --light-grey: #404040;
+            --text-grey: #B0B0B0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            color: var(--white);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--dark-grey);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links a {
+            color: var(--text-grey);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .card {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid var(--light-grey);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-yellow);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            background: var(--medium-grey);
+            border: 1px solid var(--light-grey);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--medium-grey);
+            border: 2px dashed var(--light-grey);
+            border-radius: 8px;
+            color: var(--text-grey);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input:hover {
+            border-color: var(--primary-yellow);
+            background: var(--light-grey);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            color: var(--black);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+        }
+
+        .loading-box {
+            background: var(--dark-grey);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--primary-yellow);
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--light-grey);
+            border-top: 4px solid var(--primary-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result-box {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-yellow);
+            display: none;
+        }
+
+        .result-box h2 {
+            color: var(--primary-yellow);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .file-info {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            margin-top: 5px;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-yellow), transparent);
+            margin: 30px 0;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .student-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .evaluation-result {
+            margin-top: 20px;
+        }
+
+        .question-result {
+            background: var(--medium-grey);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary-yellow);
+        }
+
+        .total-marks {
+            background: var(--dark-grey);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid var(--primary-yellow);
+            margin-top: 20px;
+        }
+
+        .marks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .marks-item {
+            background: var(--medium-grey);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .preview-item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--light-grey);
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .warning-box {
+            background: #ff9800;
+            color: black;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>IMVS - Advanced Evaluation</h1>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('history') }}">History</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="loadingOverlay">
+            <div class="loading-box">
+                <div class="spinner"></div>
+                <h3>Processing...</h3>
+                <p>Please wait while we evaluate the exam papers</p>
+            </div>
+        </div>
+
+        <!-- Student Information -->
+        <div class="card">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">👤 Student Information</h2>
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" id="student_name" placeholder="Enter student name" required>
+                </div>
+                <div class="form-group">
+                    <label for="batch">Batch/Class</label>
+                    <input type="text" id="batch" placeholder="Enter batch or class" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Configuration -->
+        <div class="card">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">📋 Exam Configuration</h2>
+            
+            <div class="form-group">
+                <label for="total_marks">Total Exam Marks</label>
+                <input type="number" id="total_marks" placeholder="Enter total marks for the exam" required min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="question_count">Number of Questions</label>
+                <input type="number" id="question_count" placeholder="How many questions in the exam?" required min="1" max="20">
+            </div>
+
+            <div id="marks_configuration" style="display: none;">
+                <h3 style="color: var(--primary-yellow); margin-bottom: 15px;">🎯 Marks per Question</h3>
+                <div class="marks-grid" id="questions_container"></div>
+            </div>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="card">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">📁 Upload Answer Sheet Images</h2>
+            
+            <div class="form-group">
+                <label for="teacher_images">📚 Teacher's Reference Images</label>
+                <input type="file" class="file-input" id="teacher_images" name="teacher_images[]" accept="image/*" multiple required>
+                <div class="file-info">Upload multiple images of teacher's reference answers (PNG, JPG, JPEG)</div>
+                <div class="image-preview" id="teacher_preview"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="student_images">📝 Student's Answer Images</label>
+                <input type="file" class="file-input" id="student_images" name="student_images[]" accept="image/*" multiple required>
+                <div class="file-info">Upload multiple images of student's answers (PNG, JPG, JPEG)</div>
+                <div class="image-preview" id="student_preview"></div>
+            </div>
+            
+            <button id="extractTextBtn" class="btn" style="width: 100%; margin-bottom: 15px;">🔍 Extract Text from Images</button>
+        </div>
+
+        <!-- Text Extraction Results -->
+        <div class="card" id="textSection" style="display:none;">
+            <h2 style="color: var(--primary-yellow); margin-bottom: 20px;">📖 Extracted Text</h2>
+            
+            <div id="questionWarning" class="warning-box" style="display: none;"></div>
+            
+            <div class="form-group">
+                <label for="teacher_text">Teacher's Answers</label>
+                <textarea id="teacher_text" placeholder="Extracted teacher text will appear here..." rows="6"></textarea>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-group">
+                <label for="student_text">Student's Answers</label>
+                <textarea id="student_text" placeholder="Extracted student text will appear here..." rows="6"></textarea>
+            </div>
+
+            <button id="evaluateBtn" class="btn" style="width: 100%;">🚀 Start Advanced Evaluation</button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="result-box" id="evaluation_result">
+            <h2>📈 Advanced Evaluation Results</h2>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const loadingOverlay = document.getElementById("loadingOverlay");
+        const questionCountInput = document.getElementById("question_count");
+        const marksConfigSection = document.getElementById("marks_configuration");
+        const questionsContainer = document.getElementById("questions_container");
+        const resultBox = document.getElementById("evaluation_result");
+        const resultContent = document.getElementById("resultContent");
+        const textSection = document.getElementById("textSection");
+        const teacherImagesInput = document.getElementById("teacher_images");
+        const studentImagesInput = document.getElementById("student_images");
+        const teacherPreview = document.getElementById("teacher_preview");
+        const studentPreview = document.getElementById("student_preview");
+        const questionWarning = document.getElementById("questionWarning");
+
+        let teacherFiles = [];
+        let studentFiles = [];
+        let hasQuestionMismatch = false;
+
+        function showLoading() {
+            loadingOverlay.style.display = "flex";
+        }
+
+        function hideLoading() {
+            loadingOverlay.style.display = "none";
+        }
+
+        // Image preview functionality
+        function handleImagePreview(inputElement, previewElement, filesArray) {
+            return function(e) {
+                const files = Array.from(e.target.files);
+                filesArray.push(...files);
+                
+                previewElement.innerHTML = '';
+                
+                filesArray.forEach((file, index) => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const previewItem = document.createElement('div');
+                        previewItem.className = 'preview-item';
+                        previewItem.innerHTML = `
+                            <img src="${e.target.result}" alt="Preview">
+                            <button type="button" class="remove-btn" data-index="${index}">×</button>
+                        `;
+                        previewElement.appendChild(previewItem);
+                        
+                        // Add remove functionality
+                        previewItem.querySelector('.remove-btn').addEventListener('click', function() {
+                            const removeIndex = parseInt(this.getAttribute('data-index'));
+                            filesArray.splice(removeIndex, 1);
+                            previewElement.removeChild(previewItem);
+                            // Update data indices for remaining items
+                            const remainingButtons = previewElement.querySelectorAll('.remove-btn');
+                            remainingButtons.forEach((btn, idx) => {
+                                btn.setAttribute('data-index', idx);
+                            });
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                });
+            };
+        }
+
+        teacherImagesInput.addEventListener('change', handleImagePreview(teacherImagesInput, teacherPreview, teacherFiles));
+        studentImagesInput.addEventListener('change', handleImagePreview(studentImagesInput, studentPreview, studentFiles));
+
+        // Generate marks input fields based on question count
+        questionCountInput.addEventListener('input', function() {
+            const count = parseInt(this.value);
+            if (count > 0 && count <= 20) {
+                questionsContainer.innerHTML = '';
+                for (let i = 1; i <= count; i++) {
+                    const div = document.createElement('div');
+                    div.className = 'marks-item';
+                    div.innerHTML = `
+                        <label for="marks_${i}" style="color: var(--primary-yellow); font-weight: 600;">Question ${i}</label>
+                        <input type="number" id="marks_${i}" placeholder="Marks" required min="1" style="margin-top: 8px;">
+                    `;
+                    questionsContainer.appendChild(div);
+                }
+                marksConfigSection.style.display = 'block';
+            } else {
+                marksConfigSection.style.display = 'none';
+            }
+        });
+
+        // Extract text from images
+        document.getElementById('extractTextBtn').addEventListener('click', async () => {
+            const studentName = document.getElementById('student_name').value;
+            const batch = document.getElementById('batch').value;
+            const totalMarks = document.getElementById('total_marks').value;
+            const questionCount = document.getElementById('question_count').value;
+            
+            if (!studentName || !batch || !totalMarks || !questionCount) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (teacherFiles.length === 0 || studentFiles.length === 0) {
+                alert('Please upload both teacher and student images.');
+                return;
+            }
+
+            showLoading();
+            
+            try {
+                const formData = new FormData();
+                
+                // Add teacher images
+                teacherFiles.forEach((file, index) => {
+                    formData.append('teacher_images[]', file);
+                });
+                
+                // Add student images
+                studentFiles.forEach((file, index) => {
+                    formData.append('student_images[]', file);
+                });
+
+                // ✅ NEW: Add question count to form data
+                formData.append('question_count', questionCount);
+
+                const response = await fetch('/advanced_extract_text', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Text extraction failed');
+                }
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                document.getElementById('teacher_text').value = data.teacher_text || 'No text extracted';
+                document.getElementById('student_text').value = data.student_text || 'No text extracted';
+                textSection.style.display = 'block';
+                
+                // ✅ NEW: Show question validation result
+                if (data.question_validation) {
+                    const validation = data.question_validation;
+                    hasQuestionMismatch = !validation.all_questions_found;
+                    
+                    if (hasQuestionMismatch) {
+                        questionWarning.style.display = 'block';
+                        questionWarning.innerHTML = `
+                            ⚠️ <strong>QUESTION COUNT MISMATCH DETECTED!</strong><br><br>
+                            You specified <strong>${validation.expected_questions} questions</strong>, but only <strong>${validation.detected_questions} questions</strong> were detected in the uploaded images.<br><br>
+                            <strong>Please check:</strong><br>
+                            • Are all answer sheets properly uploaded?<br>
+                            • Is the handwriting clear and visible?<br>
+                            • Are question numbers clearly written?<br><br>
+                            <em>You can still proceed with evaluation, but results may be incomplete.</em>
+                        `;
+                    } else {
+                        questionWarning.style.display = 'none';
+                        alert(`✅ All ${validation.expected_questions} questions detected successfully! You can proceed with evaluation.`);
+                    }
+                }
+                
+                textSection.scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error extracting text: ' + error.message);
+            } finally {
+                hideLoading();
+            }
+        });
+
+        // Handle evaluation
+        document.getElementById('evaluateBtn').addEventListener('click', async () => {
+            const studentName = document.getElementById('student_name').value;
+            const batch = document.getElementById('batch').value;
+            const totalMarks = document.getElementById('total_marks').value;
+            const questionCount = document.getElementById('question_count').value;
+            const teacherText = document.getElementById('teacher_text').value;
+            const studentText = document.getElementById('student_text').value;
+            
+            if (!studentName || !batch || !totalMarks || !questionCount || !teacherText || !studentText) {
+                alert('Please fill in all required fields and extract text first.');
+                return;
+            }
+
+            // ✅ NEW: Show confirmation if question count mismatch detected
+            if (hasQuestionMismatch) {
+                const confirmed = confirm("⚠️ QUESTION COUNT MISMATCH DETECTED!\n\nSome questions may not be properly evaluated. Do you want to continue anyway?");
+                if (!confirmed) {
+                    return;
+                }
+            }
+
+            // Collect question data
+            const questions = [];
+            for (let i = 1; i <= parseInt(questionCount); i++) {
+                const questionMarks = document.getElementById(`marks_${i}`).value;
+                if (!questionMarks) {
+                    alert(`Please enter marks for Question ${i}`);
+                    return;
+                }
+                questions.push({
+                    number: i,
+                    marks: parseInt(questionMarks)
+                });
+            }
+
+            showLoading();
+            
+            try {
+                const formData = new FormData();
+                formData.append('student_name', studentName);
+                formData.append('batch', batch);
+                formData.append('total_marks', totalMarks);
+                formData.append('teacher_text', teacherText);
+                formData.append('student_text', studentText);
+                formData.append('questions', JSON.stringify(questions));
+
+                const response = await fetch('/advanced_evaluate', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Evaluation failed');
+                }
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                // Display results
+                displayResults(data.results, parseInt(totalMarks), data.total_obtained, data.percentage);
+                resultBox.style.display = 'block';
+                resultBox.scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error during evaluation: ' + error.message);
+            } finally {
+                hideLoading();
+            }
+        });
+
+        function displayResults(results, totalMarks, totalObtained, percentage) {
+            let html = '';
+
+            // Show warning if question mismatch was detected
+            if (hasQuestionMismatch) {
+                html += `
+                    <div class="warning-box">
+                        ⚠️ <strong>Note:</strong> Question count mismatch was detected during text extraction. Some questions may not have been evaluated properly.
+                    </div>
+                `;
+            }
+
+            results.forEach((result, index) => {
+                html += `
+                    <div class="question-result">
+                        <h4>Question ${result.question_number}</h4>
+                        <p><strong>Marks:</strong> ${result.marks_obtained}/${result.max_marks}</p>
+                        <p><strong>Feedback:</strong> ${result.feedback}</p>
+                    </div>
+                `;
+            });
+            
+            html += `
+                <div class="total-marks">
+                    <h3>📊 Final Result</h3>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary-yellow);">
+                        Total Marks: ${totalObtained}/${totalMarks}
+                    </p>
+                    <p style="font-size: 1.2rem;">
+                        Percentage: ${percentage.toFixed(1)}%
+                    </p>
+                </div>
+            `;
+
+            resultContent.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

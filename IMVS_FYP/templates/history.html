@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - IMVS</title>
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --dark-yellow: #FFC107;
+            --black: #121212;
+            --dark-grey: #1E1E1E;
+            --medium-grey: #2D2D2D;
+            --light-grey: #404040;
+            --text-grey: #B0B0B0;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-grey) 100%);
+            color: var(--white);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: var(--dark-grey);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-yellow), var(--dark-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links a {
+            color: var(--text-grey);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .card {
+            background: var(--dark-grey);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--light-grey);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .history-table th,
+        .history-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .history-table th {
+            background: var(--medium-grey);
+            color: var(--primary-yellow);
+            font-weight: 600;
+        }
+
+        .history-table tr:hover {
+            background: var(--medium-grey);
+        }
+
+        .marks-cell {
+            font-weight: bold;
+            color: var(--primary-yellow);
+        }
+
+        .eval-type {
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: var(--medium-grey);
+            color: var(--text-grey);
+        }
+
+        .eval-type.basic {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .eval-type.advanced {
+            background: #2196F3;
+            color: white;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-grey);
+        }
+
+        .no-data .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .history-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .container {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>IMVS - History</h1>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('advanced_evaluation') }}">Advanced Evaluation</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Evaluation History</h1>
+            <p>View all your previous answer evaluations</p>
+        </div>
+
+        <div class="card">
+            {% if evaluations %}
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Student Name</th>
+                        <th>Batch</th>
+                        <th>Marks</th>
+                        <th>Feedback</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for eval in evaluations %}
+                    <tr>
+                        <td>
+                            <span class="eval-type {{ eval[6] }}">
+                                {% if eval[6] == 'basic' %}
+                                    Basic
+                                {% else %}
+                                    Advanced
+                                {% endif %}
+                            </span>
+                        </td>
+                        <td>{{ eval[0] }}</td>
+                        <td>{{ eval[1] }}</td>
+                        <td class="marks-cell">{{ eval[2] }}/{{ eval[3] }}</td>
+                        <td>{{ eval[4] }}</td>
+                        <td>{{ eval[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="no-data">
+                <div class="icon">📚</div>
+                <h3>No Evaluation History</h3>
+                <p>You haven't evaluated any answers yet.</p>
+                <p>
+                    <a href="{{ url_for('evaluation') }}" style="color: var(--primary-yellow); margin-right: 15px;">
+                        Start Basic Evaluation
+                    </a>
+                    <a href="{{ url_for('advanced_evaluation') }}" style="color: var(--primary-yellow);">
+                        Start Advanced Evaluation
+                    </a>
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
