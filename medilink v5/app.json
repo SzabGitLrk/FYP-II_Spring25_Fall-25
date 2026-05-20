@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Medilink",
+    "slug": "medilink",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show nearby doctors and pharmacies and provide navigation directions."
+      }
+    },
+    "android": {
+      "package": "com.medilink.app",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-location"
+    ]
+  }
+}
